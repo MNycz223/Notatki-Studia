@@ -338,3 +338,83 @@ $$
     16 & 0 & -8 
     \end{bmatrix} 
 $$
+
+### Wyznacznik macierzy
+
+Wyznacznik to liczba przyporządkowana macierzy kwadratowej
+```math
+detA \text{ - wyznacznik} 
+```
+
+```math
+n=1
+\quad
+A =
+\begin{bmatrix}
+a
+\end{bmatrix}
+\quad
+detA = a
+```
+
+```math
+n=2
+\quad
+A =
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+\quad
+detA =ad - bc
+```
+
+#### Wzory Sarrusa 
+```math
+    n = 3
+```
+
+```math
+det
+\substack{
+    \begin{bmatrix}
+    1 & 0 & 3 \\
+    0 & 2 & 5 \\
+    4 & 1 & 6
+    \end{bmatrix}
+    \\
+    \begin{matrix}
+    1 & 0 & 3 \\
+    0 & 2 & 5
+    \end{matrix}
+} =
+(1 \cdot 2 \cdot 6 + 0 \cdot 1 \cdot 3 + 4 \cdot 0 \cdot 5) - (4 \cdot 2 \cdot 3 + 1 \cdot 1 \cdot 5 + 0 \cdot 0 \cdot 6) = 12 - 29 = -17
+```
+
+#### Tw. Laplace'a
+Jeżeli $`A`$ jest macierzą kwadratową wymioaru $`n \geqslant 2`$, to 
+
+```math
+detA =
+\sum^{n}_{j = 1}
+a_{ij}D_{ij}
+\qquad
+\text{Rozwinięcie względem wiersza} \; i
+```
+```math
+detA =
+\sum^{n}_{i = 1}
+a_{ij}D_{ij}
+\qquad
+\text{Rozwinięcie względem kolumny} \; j
+```
+
+Gdzie $`D_{ij}`$ to dopełnienie algebraiczne $`a_{ij}`$
+
+```math
+D_{ij} = (-1)^{i+j} \cdot detA_{ij}
+```
+gdzie $`A_{ij}`$ to macierz, która powstaje z $`A`$ przez skreślenie wiersza $`i`$ oraz kolumny $`j`$
+
+Stosując wzór laplace'a szukamy wiersza lub kolumny z największą ilością zer.
+Jeżeli w maceirzy występuje wiersz lub kolumna złożona z samych zer to $`detA = 0`$.
