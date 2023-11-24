@@ -12,9 +12,7 @@ $$
     \end{bmatrix}
 $$
 
-$$
-    a_{ij}
-$$
+$$a_{ij}$$
 $`i`$ - numer wiersza;
 $`j`$ - numer kolumny;
 
@@ -40,34 +38,36 @@ $$
 Macierz w której liczba wierwszy równa się liczbie kolumn ($`m=n`$)
 
 Wyróżniamy główną przekątną
-$$
-    \begin{bmatrix}
+```math
+\begin{bmatrix}
     \ddots & \\
     & \ddots
-    \end{bmatrix}
-    \\
-    (a_{1,1}, \; a_{2,2}, \;\dots\; a_{n,n})
+\end{bmatrix}
+```
+$$
+(a_{1,1}, \; a_{2,2}, \;\dots\; a_{n,n})
 $$
 
 ### Macierz trójkątna
 To macierz kwadratowa w której wszystkie elementy nad (dolna) lub pod (górna) główną przekątną wynoszą zero
 
-$$
+```math
     \begin{bmatrix}
     \ddots &  0 \\
     \cdots & \ddots
     \end{bmatrix}
     \\
     \text{Dolna}
-$$
-$$
+```
+
+```math
     \begin{bmatrix}
     \ddots & \cdots \\
     0 & \ddots
     \end{bmatrix}
     \\
     \text{Górna}
-$$
+```
 
 ### Macierz diagonalna
 To macierz która jest trójkątna górna i dolna.
@@ -145,9 +145,9 @@ $$
 
 ### Mnożenie macierzy przez liczbę
 
-$$
+```math
     A,B \in M^{m\;\times\;n},\quad
-    \alpha \in \R \qquad
+    \alpha \in R \qquad
     \substack
     {
         i \in \{1,2, \cdots,m\}\\
@@ -155,7 +155,7 @@ $$
     }
     \\
     B = \alpha \cdot A \iff b_{ij} = \alpha \cdot a_{ij}
-$$
+```
 
 Aby pomnożyć Macierz $`A`$ przez liczbę $`\alpha`$ każdy element macierzy A mnożymy przez liczbę $`\alpha`$
 
@@ -192,7 +192,7 @@ Dodawanie i odejmowanie można wykonać tylko na macierzach tego samego wymiaru.
 
 Działania te wykonujemy na współrzędnych to znaczy dodajemy/odejmujemy liczby na tych samych pozycjach.
 
-$$
+```math
 A =
 \begin{bmatrix}
 4 & 0 & -3 \\
@@ -203,9 +203,9 @@ B =
 -7 & 6 & 4 \\
 -9 & 8 & 0 \\
 \end{bmatrix}
-$$
+```
 
-$$
+```math
 A + B =
 \begin{bmatrix}
 4 & 0 & -3 \\
@@ -221,9 +221,9 @@ A + B =
 -3 & 6 & 1 \\
 -11 & 13 & 1 \\
 \end{bmatrix}
-$$
+```
 
-$$
+```math
 A - B =
 \begin{bmatrix}
 4 & 0 & -3 \\
@@ -239,14 +239,14 @@ A - B =
 11 & -6 & -7 \\
 7 & -3 & 1 \\
 \end{bmatrix}
-$$
-$$
+```
+```math
 B - A =
 \begin{bmatrix}
 -11 & 6 & 7 \\
 -7 & 3 & -1 \\
 \end{bmatrix}
-$$
+```
 
 ### Mnożenie macierzy
 
