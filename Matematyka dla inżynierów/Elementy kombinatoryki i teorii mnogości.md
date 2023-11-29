@@ -117,6 +117,7 @@ $`\prod`$ - pi, symbol iloczynu
 ## Trójkąt Pascala
 
 ```math
+\substack{
 \binom{0}{0} \\
 \binom{1}{0}\quad\binom{1}{1} \\
 \binom{2}{0}\quad\binom{2}{1}\quad\binom{2}{2} \\
@@ -124,9 +125,11 @@ $`\prod`$ - pi, symbol iloczynu
 \binom{4}{0}\quad\binom{4}{1}\quad\binom{4}{2}\quad\binom{4}{3}\quad\binom{4}{4} \\
 \binom{5}{0}\quad\binom{5}{1}\quad\binom{5}{2}\quad\binom{5}{3}\quad\binom{5}{4}\quad\binom{5}{5} \\
 \binom{6}{0}\quad\binom{6}{1}\quad\binom{6}{2}\quad\binom{6}{3}\quad\binom{6}{4}\quad\binom{6}{5}\quad\binom{6}{6}
+}
 ```
 
 ```math
+\substack{
 1 \\
 1\quad1 \\
 1\quad2\quad1 \\
@@ -134,6 +137,7 @@ $`\prod`$ - pi, symbol iloczynu
 1\quad4\quad6\quad4\quad1 \\
 1\quad5\quad10\quad10\quad5\quad1 \\
 1\quad6\quad15\quad20\quad15\quad6\quad1
+}
 ```
 
 ### Dwumian Newtona
