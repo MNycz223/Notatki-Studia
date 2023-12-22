@@ -455,3 +455,72 @@ Uwaga. Macierz $`A`$ może posiadać więcej niż jeden minor bazowy, ale wszyst
 Rząd macierzy niezerowej to wymiar dowlonego minora bazowego tej macierzy.
 
 Rząd macierzy zerowej wynosi zero ($`rz(\theta) = 0`$)
+
+## Układy równań liniowych
+Z układem równań liniowych można powiązać macierz $`A`$ wymiaru $`m \times n`$ nazywaną **macierzą współczynników układu równań** (macierz główna) oraz dwie macierze kolumnowe
+$`x`$ (kolumna zmiennych) i $`b`$ (kolumna wyrazów wolnych).
+```math
+Ax = b
+```
+
+### Układ Cramera
+Układ równań liniowych jest układem Cramera, jeżeli macierz główna układu $`A`$ jest kwadratowa nieosobliwa.
+Czyli liczba równań w układzie jest równa liczbie zmiennych a wyznacznik macierzy głównej nie jest równy 0 ($`detA \neq 0`$).
+
+#### Metoda macierzy odwrotnej
+Układ równań liniowych Cramera ma dokładnie jedno rozwiązanie zadane wzorem
+```math
+x = A^{-1} \cdot b
+```
+
+#### Metoda Cramera
+Układ równań liniowych Cramera ma dokładnie jedno rozwiązanie zadane wzorem
+```math
+x_i = \frac{detA_i}{detA},
+\qquad
+i = 1, 2, \dots, n
+```
+gdzie $`A_i`$ to macierz, która powstaje z $`A`$ przez zastąpienie kolumnu $`i`$ przez kolumnę wyrazów wolnych.
+
+### Twierdzenie Kroneckera-Capelliego
+Macierz $`U`$ (macierz uzupełniona) powstaje z macierzy $`A`$ przez dołączenie kolumny $`b`$.
+```math
+U =
+\begin{bmatrix}
+A & \vdots & b
+\end{bmatrix}
+```
+
+- jeżeli $`rz(A) = rz(U) = n`$ ($`n`$ - liczba niewiadowym), to rozwiązanie jest jednyne;
+- jeżeli $`rz(A) = rz(U) = r < n`$, to rozwiązań jest nieskończenie wiele i zależą od $`n - r`$ parametrów.
+
+### Macierz schodkowa
+Macierz schodkowa to macierz w której każdy pierwszy nie zerowy element wiersza jest przesunięty w prawo w stosunku do wiersza poprzedniego
+
+Nie bierzemy pod uwagę wierszy zerowych
+
+```math
+A =
+\begin{bmatrix}
+5 & 0 & 8 & 0 \\
+0 & 4 & 0 & 0 \\
+0 & 0 & 0 & 3
+\end{bmatrix}
+\quad
+rz(A) = 3
+```
+
+Rząd macierzy schodkowej jest równy liczbie schodków to znaczy nie zerowych wierszy.
+
+### Operacje elementarne na wierszach
+1. Pomnożyć wiersz przez liczbę różną od zera
+2. do wiersza dodać inny wiersz pomnożony przez liczbę
+3. zamienić dwa wiersze miejscami
+
+Analogiczne operacje definiujemy dla kolumn
+
+Przekształcenia elementarne nie zmieniają rzędu macierzy.
+
+### Metoda Gaussa (eliminacji zmiennych)
+Przekształcamy macierz uzupełniną układu za pomocą operacji elementarnych na wierszach do postaci schodkowej. 
+Z przekształconej macierzy odczytujemy czy rząd $`A`$ jest równy rzędowy $`U`$, jeżeli nie to układ jest sprzeczny, jeżeli są równe to z przekształconej macierzy odczytujemy równania układu a następnie rozwiązania. 
