@@ -342,6 +342,11 @@ $$
 ### Wyznacznik macierzy
 
 Wyznacznik to liczba przyporządkowana macierzy kwadratowej
+
+Macierze kwadratowe dzielimy na:
+- osobliwe, tzn. $`detA = 0`$
+- nieosobliwe, tzn. $`detA \neq 0`$
+
 ```math
 detA \text{ - wyznacznik} 
 ```
@@ -366,7 +371,7 @@ a & b \\
 c & d
 \end{bmatrix}
 \quad
-detA =ad - bc
+detA = ad - bc
 ```
 
 #### Wzory Sarrusa 
@@ -418,3 +423,35 @@ gdzie $`A_{ij}`$ to macierz, która powstaje z $`A`$ przez skreślenie wiersza $
 
 Stosując wzór laplace'a szukamy wiersza lub kolumny z największą ilością zer.
 Jeżeli w maceirzy występuje wiersz lub kolumna złożona z samych zer to $`detA = 0`$.
+
+### Macierz odwrotna
+Macierz $`A^-1`$ jest macierzą odwrotną do $`A`$, jeżeli:
+```math
+A^{-1} \cdot A = A \cdot A^{-1} = I
+```
+
+Macierz $`A`$ jest odwracalna $`\iff A`$ jest maceirzą nieosobliwą.
+
+Jeżeli $`A`$ jest macierzą kwadratową nieosobliwą wymiaru wymiaru $`n \geqslant 2`$, to
+```math
+A^{-1} = \frac{1}{detA} \cdot D^T
+```
+gdzie $`D = \begin{bmatrix} D_{ij} \end{bmatrix}`$ jest macierzą dopełnień algebraicznych $`A`$
+
+Uwaga: $`n = 1`$
+```math
+A = \begin{bmatrix} 5 \end{bmatrix} \qquad A^{-1} = \begin{bmatrix} \frac{1}{5} \end{bmatrix} 
+```
+
+### Minor macierzy
+Minor $`M`$ macierzy $`A`$ to macierz kwadratowa, która pwostaje z $`A`$ przez skreślenie pewnej ilości (być może zero) wierszy i kolumn.
+
+#### Minor bazowy
+Minor $`M`$ macierzy $`A`$ jest minorem bazowym A, jeżeli $`detM \neq 0`$ oraz wszystkie minory $`M'`$ macierzy $`A`$ wymiaru większego niż $`M`$ mają wyznaczniki równe zero ($`detM' = 0`$)
+
+Uwaga. Macierz $`A`$ może posiadać więcej niż jeden minor bazowy, ale wszystkie minory bazowe $`A`$ są tego samego wymiaru.
+
+#### Rząd macierzy
+Rząd macierzy niezerowej to wymiar dowlonego minora bazowego tej macierzy.
+
+Rząd macierzy zerowej wynosi zero ($`rz(\theta) = 0`$)
