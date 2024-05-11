@@ -1,0 +1,66 @@
+\documentclass[draft]{article}
+\usepackage[a4paper, top=1.5in, bottom=1.5in, right=1in, left=1in]{geometry}
+\usepackage[bottom]{footmisc}
+
+\usepackage{polski}
+\usepackage[polish]{babel}
+
+\usepackage{mathtools}
+\usepackage{amsfonts}
+
+\title{Rachunek różniczkowy i całkowy}
+\date{11.05.2024}
+\author{Michał Nycz}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \maketitle
+    \tableofcontents
+    \newpage
+
+    \pagenumbering{arabic}
+    \section{Pochodne funkcji jednej zmiennej}
+
+    \subsection{Wzory na pochodne podstawowych funkcji}
+
+    \paragraph{Pochodna funckji stałej:}
+    \[ (c)^\prime = 0 \text{, \quad gdzie} \; c \in \mathbb{R} \text{ jest stałą} \]
+    
+    \paragraph{Pochodna funckji potęgowej:}
+    \[ (x^a)^\prime = ax^{a-1} \text{, \quad gdzie} \; a \in \mathbb{R} \text{ jest stałą} \]
+    
+    \paragraph{Pochodna funckji wykładniczej i logarytmicznej:}
+    \begin{align*}
+        (a^x)^\prime = a^x \ln a &\text{, \quad gdzie} \; a \in (0, 1) \cup (1, \infty) \text{ jest stałą} \\
+        (\log_a x)^\prime = \frac{1}{x \ln a} &\text{, \quad gdzie} \; a \in (0, 1) \cup (1, \infty) \text{ jest stałą} \\
+        \\
+        (e^x)^\prime = e^x \\
+        (\ln x)^\prime = \frac{1}{x}
+    \end{align*}
+
+    \paragraph{Pochodna funckji trygonometrycznych:}
+    \begin{align*}
+        (\sin x)^\prime &= \cos x \\
+        (\cos x)^\prime &= - \sin x \\
+        (\text{tg } x)^\prime &= \frac{1}{\cos^2 x} \\
+        (\text{ctg } x)^\prime &= - \frac{1}{\sin^2 x} \\
+    \end{align*}
+
+    \paragraph{Pochodne funkcji łączonych:}
+    \begin{align*}
+        (a \cdot f)^\prime &= a \cdot f^\prime \text{, \quad gdzie} \; c \in \mathbb{R} \text{ jest stałą} \\
+        \\
+        (f \pm g)^\prime &= f^\prime \pm g^\prime \\
+        (f \cdot g)^\prime &= f^\prime g + f g^\prime \\
+        (\frac{f}{g})^\prime &= \frac{f^\prime g - f g^\prime}{g^2}
+    \end{align*}
+
+    \paragraph[Przydatne pochodne:]
+        {Przydatne pochodne\footnote{Przydatne pochodne wywodządze się z pochodnych funkcji podstawowych}:}
+    \begin{align*}
+        (x)^\prime &= 1 \\
+        (ax)^\prime &= a \\
+        (\sqrt{x})^\prime &= \frac{1}{2\sqrt{x}} \\
+    \end{align*}
+
+\end{document}
