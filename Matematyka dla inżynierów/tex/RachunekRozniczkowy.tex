@@ -1,27 +1,11 @@
-\documentclass[draft]{article}
-\usepackage[a4paper, top=1.5in, bottom=1.5in, right=1in, left=1in]{geometry}
-\usepackage[bottom]{footmisc}
-
-\usepackage{polski}
-\usepackage[polish]{babel}
-
-\usepackage{mathtools}
-\usepackage{amsfonts}
-
-\title{Rachunek różniczkowy i całkowy}
-\date{11.05.2024}
-\author{Michał Nycz}
+\documentclass[../Matematyka.tex]{subfiles}
 
 \begin{document}
-    \pagenumbering{gobble}
-    \maketitle
-    \tableofcontents
-    \newpage
+    \section{Rachunek różniczkowy}
 
-    \pagenumbering{arabic}
-    \section{Pochodne funkcji jednej zmiennej}
+    \subsection{Pochodne funkcji jednej zmiennej}
 
-    \subsection{Wzory na pochodne podstawowych funkcji}
+    \subsubsection{Wzory na pochodne podstawowych funkcji}
 
     \paragraph{Pochodna funckji stałej:}
     \[ (c)^\prime = 0 \text{, \quad gdzie} \; c \in \mathbb{R} \text{ jest stałą} \]
@@ -42,13 +26,13 @@
     \begin{align*}
         (\sin x)^\prime &= \cos x \\
         (\cos x)^\prime &= - \sin x \\
-        (\text{tg } x)^\prime &= \frac{1}{\cos^2 x} \\
-        (\text{ctg } x)^\prime &= - \frac{1}{\sin^2 x} \\
+        (\tan x)^\prime &= \frac{1}{\cos^2 x} \\
+        (\cot x)^\prime &= - \frac{1}{\sin^2 x} \\
     \end{align*}
 
     \paragraph{Pochodne funkcji łączonych:}
     \begin{align*}
-        (a \cdot f)^\prime &= a \cdot f^\prime \text{, \quad gdzie} \; c \in \mathbb{R} \text{ jest stałą} \\
+        (a \cdot f)^\prime &= a \cdot f^\prime \text{, \quad gdzie} \; a \in \mathbb{R} \text{ jest stałą} \\
         \\
         (f \pm g)^\prime &= f^\prime \pm g^\prime \\
         (f \cdot g)^\prime &= f^\prime g + f g^\prime \\
@@ -62,5 +46,4 @@
         (ax)^\prime &= a \\
         (\sqrt{x})^\prime &= \frac{1}{2\sqrt{x}} \\
     \end{align*}
-
 \end{document}

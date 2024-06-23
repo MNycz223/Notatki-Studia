@@ -1,0 +1,111 @@
+\documentclass[../Matematyka.tex]{subfiles}
+
+\begin{document}
+    \section{Podstawy logiki matematycznej}
+
+    \subsection{Elementy logiki matematycznej}
+
+    \subsubsection*{Negatyw \(\sim\)}
+    \begin{tabular}{c|c}
+        \(p\) & \(\sim \! p\) \\
+        \hline
+        \(1\) & \(0\) \\
+        \(0\) & \(1\) \\
+    \end{tabular}
+
+    \subsubsection*{Alternatywa \(\lor\)}
+    \begin{tabular}{ccc}
+        \(p\) & \(p\) & \(p \lor q\) \\
+        \hline
+        \(1\) & \(1\) & 1 \\
+        \(1\) & \(0\) & 1 \\
+        \(0\) & \(1\) & 1 \\
+        \(0\) & \(0\) & 0 \\
+    \end{tabular}
+
+    \subsubsection*{Koniunkcja \(\land\)}
+    \begin{tabular}{c|c|c}
+        \(p\) & \(p\) & \(p \land q\) \\
+        \hline
+        \(1\) & \(1\) & 1 \\
+        \(1\) & \(0\) & 0 \\
+        \(0\) & \(1\) & 0 \\
+        \(0\) & \(0\) & 0 \\
+    \end{tabular}
+
+    \subsubsection*{Implikacja \(\implies\)}
+    \begin{tabular}{c|c|c}
+        \(p\) & \(p\) & \(p \implies q\) \\
+        \hline
+        \(1\) & \(1\) & 1 \\
+        \(1\) & \(0\) & 0 \\
+        \(0\) & \(1\) & 1 \\
+        \(0\) & \(0\) & 1 \\
+    \end{tabular}
+
+    \subsubsection*{Równoważność \(\iff\)}
+    \begin{tabular}{c|c|c}
+        \(p\) & \(p\) & \(p \iff q\) \\
+        \hline
+        \(1\) & \(1\) & 1 \\
+        \(1\) & \(0\) & 0 \\
+        \(0\) & \(1\) & 0 \\
+        \(0\) & \(0\) & 1 \\
+    \end{tabular}
+
+    \newpage
+    \subsection{Prawa logiczne}
+
+    \textbf{Tautologia} - Zdanie zawsze prawdziwe.
+
+    \subsubsection{Prawa De Morgana}
+    \subsubsection*{I prawo De Morgana}
+    Prawo zaprzeczania koniunkcji: negacja koniunkcji jest równoważna alternatywie negacji
+    \[[\sim\!(p \land q)] \iff (\sim\!p \; \lor \sim\!q)\]
+
+    \begin{table}[H]
+        \centering
+        \caption{Wartości logiczne I prawa De Morgana}
+        \begin{tabular}{c|c|>{\columncolor[gray]{.8}}c|c|c|c|>{\columncolor[gray]{.8}}c}
+            \(p\) & \(q\) & \(p \land q\) & \(\sim\!(p \land q)\) & \(\sim\!p\) & \(\sim\!q\) & \((\sim\!p) \lor (\sim\!q)\) \\
+            \hline
+            1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+            1 & 0 & 0 & 1 & 0 & 1 & 1 \\
+            0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+            0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        \end{tabular}
+    \end{table}
+
+    \subsubsection*{II prawo De Morgana}
+    Prawo zaprzeczenia alternatywy: negacja alternatywy jest równoważna koniunkcji negacji
+    \[[\sim\!(p \lor q)] \iff (\sim\!p \; \land \sim\!q)\]
+
+    \begin{table}[H]
+        \centering
+        \caption{Wartości logiczne II prawa De Morgana}
+        \begin{tabular}{c|c|>{\columncolor[gray]{.8}}c|c|c|c|>{\columncolor[gray]{.8}}c}
+            \(p\) & \(q\) & \(p \lor q\) & \(\sim\!(p \lor q)\) & \(\sim\!p\) & \(\sim\!q\) & \((\sim\!p) \land (\sim\!q)\) \\
+            \hline
+            1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+            1 & 0 & 1 & 0 & 0 & 1 & 0 \\
+            0 & 1 & 1 & 0 & 1 & 0 & 0 \\
+            0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        \end{tabular}
+    \end{table}
+
+    \subsubsection{Prawo kontrapozycji}
+    \[(p \implies q) \iff (\sim\!p \implies \sim\!q)\]
+
+    \begin{table}[H]
+        \centering
+        \caption{Wartości logiczne prawa kontrapozycji}
+        \begin{tabular}{c|c|>{\columncolor[gray]{.8}}c|c|c|>{\columncolor[gray]{.8}}c}
+            \(p\) & \(q\) & \(p \implies q\) & \(\sim\!q\) & \(\sim\!p\) & \((\sim\!q) \implies (\sim\!p)\) \\
+            \hline
+            1 & 1 & 1 & 0 & 0 & 1 \\
+            1 & 0 & 0 & 1 & 0 & 0 \\
+            0 & 1 & 1 & 0 & 1 & 1 \\
+            0 & 0 & 1 & 1 & 1 & 1 \\
+        \end{tabular}
+    \end{table}
+\end{document}

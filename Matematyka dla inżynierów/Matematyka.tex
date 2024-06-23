@@ -1,0 +1,38 @@
+\documentclass[draft]{article}
+\usepackage[a4paper, top=1.5in, bottom=1.5in, right=1in, left=1in]{geometry}
+\usepackage[bottom]{footmisc}
+
+\usepackage{polski}
+\usepackage[polish]{babel}
+
+\usepackage[skip=10pt]{parskip}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{colortbl}
+
+\usepackage{subfiles}
+
+\title{Matematyka}
+\date{11.05.2024}
+\author{Michał Nycz}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \maketitle
+    \tableofcontents
+    \newpage
+
+    \pagenumbering{arabic}
+
+    \subfile{tex/PodstawyLogiki.tex}
+    \newpage
+    
+    \subfile{tex/Kombinatoryka.tex}
+    \newpage
+
+    \subfile{tex/RachunekRozniczkowy.tex}
+\end{document}
