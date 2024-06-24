@@ -1,6 +1,9 @@
 \documentclass[../Matematyka.tex]{subfiles}
 
 \begin{document}
+    \newcommand{\bis}{^{\prime\prime}}
+    \newcommand{\prim}{^\prime}
+
     \section{Rachunek różniczkowy}
 
     \subsection{Pochodne funkcji jednej zmiennej}
@@ -8,42 +11,105 @@
     \subsubsection{Wzory na pochodne podstawowych funkcji}
 
     \paragraph{Pochodna funckji stałej:}
-    \[ (c)^\prime = 0 \text{, \quad gdzie} \; c \in \mathbb{R} \text{ jest stałą} \]
+    \[ (c)\prim = 0 \text{, \quad gdzie} \; c \in \mathbb{R} \text{ jest stałą} \]
     
     \paragraph{Pochodna funckji potęgowej:}
-    \[ (x^a)^\prime = ax^{a-1} \text{, \quad gdzie} \; a \in \mathbb{R} \text{ jest stałą} \]
+    \[ (x^\alpha)\prim = \alpha x^{\alpha-1} \text{, \quad gdzie} \; \alpha \in \mathbb{R} \text{ jest stałą} \]
     
     \paragraph{Pochodna funckji wykładniczej i logarytmicznej:}
     \begin{align*}
-        (a^x)^\prime = a^x \ln a &\text{, \quad gdzie} \; a \in (0, 1) \cup (1, \infty) \text{ jest stałą} \\
-        (\log_a x)^\prime = \frac{1}{x \ln a} &\text{, \quad gdzie} \; a \in (0, 1) \cup (1, \infty) \text{ jest stałą} \\
+        (a^x)\prim = a^x \ln a &\text{, \quad gdzie} \; a \in (0, 1) \cup (1, \infty) \text{ jest stałą} \\
+        (\log_\alpha x)\prim = \frac{1}{x \ln \alpha} &\text{, \quad gdzie} \; \alpha \in (0, 1) \cup (1, \infty) \text{ jest stałą} \\
         \\
-        (e^x)^\prime = e^x \\
-        (\ln x)^\prime = \frac{1}{x}
+        (e^x)\prim = e^x \\
+        (\ln x)\prim = \frac{1}{x}
     \end{align*}
 
     \paragraph{Pochodna funckji trygonometrycznych:}
     \begin{align*}
-        (\sin x)^\prime &= \cos x \\
-        (\cos x)^\prime &= - \sin x \\
-        (\tan x)^\prime &= \frac{1}{\cos^2 x} \\
-        (\cot x)^\prime &= - \frac{1}{\sin^2 x} \\
+        (\sin x)\prim &= \cos x \\
+        (\cos x)\prim &= - \sin x \\
+        (\tan x)\prim &= \frac{1}{\cos^2 x} \\
+        (\cot x)\prim &= - \frac{1}{\sin^2 x} \\
     \end{align*}
 
     \paragraph{Pochodne funkcji łączonych:}
     \begin{align*}
-        (a \cdot f)^\prime &= a \cdot f^\prime \text{, \quad gdzie} \; a \in \mathbb{R} \text{ jest stałą} \\
+        (\alpha \cdot f)\prim &= \alpha \cdot f\prim \text{, \quad gdzie} \; \alpha \in \mathbb{R} \text{ jest stałą} \\
         \\
-        (f \pm g)^\prime &= f^\prime \pm g^\prime \\
-        (f \cdot g)^\prime &= f^\prime g + f g^\prime \\
-        (\frac{f}{g})^\prime &= \frac{f^\prime g - f g^\prime}{g^2}
+        (f \pm g)\prim &= f\prim \pm g\prim \\
+        (f \cdot g)\prim &= f\prim g + f g\prim \\
+        (\frac{f}{g})\prim &= \frac{f\prim g - f g\prim}{g^2}
     \end{align*}
 
     \paragraph[Przydatne pochodne:]
         {Przydatne pochodne\footnote{Przydatne pochodne wywodządze się z pochodnych funkcji podstawowych}:}
     \begin{align*}
-        (x)^\prime &= 1 \\
-        (ax)^\prime &= a \\
-        (\sqrt{x})^\prime &= \frac{1}{2\sqrt{x}} \\
+        (x)\prim &= 1 \\
+        (ax)\prim &= a \\
+        (\sqrt{x})\prim &= \frac{1}{2\sqrt{x}} \\
     \end{align*}
+
+    \subsubsection{Tw. Rolle'a}
+    Jeżeli
+    \begin{enumerate}
+        \item funkcja \(f\) jest ciągła w przedziale \([a, b]\),
+        \item funckja \(f\) ma pochodną w przedziale \((a, b)\),
+        \item \(f(a) = f(b)\)
+    \end{enumerate}
+    to istnieje \(c \in (a, b)\) takie, że \(f\prim(c) = 0\).
+
+    \subsubsection{Tw. Lagrange'a}
+    Jeżeli 
+    \begin{enumerate}
+        \item funkcja \(f\) jest ciągła w przedziale \([a, b]\),
+        \item funckja \(f\) ma pochodną w przedziale \((a, b)\),
+    \end{enumerate}
+    to istnieje \(c \in (a, b)\) takie, że \(f\prim(c) = \frac{f(b) - f(a)}{b - a}\).
+
+    \subsubsection{Monotoniczność}
+    Jeżeli funkcja \(f(x)\) dla każdego \(x \in I\), gdzie \(I\) to dowolny przedział, ma pochodną:
+    \begin{enumerate}
+        \item \(f\prim(x) = 0\), to funkcja \(f\) jest stała w przedziale \(I\),
+        \item \(f\prim(x) > 0\), to funkcja \(f\) jest rosnąca w przedziale \(I\),
+        \item \(f\prim(x) < 0\), to funkcja \(f\) jest malejąca w przedziale \(I\),
+        \item \(f\prim(x) \geq 0\), to funkcja \(f\) jest niemalejąca w przedziale \(I\),
+        \item \(f\prim(x) \leq 0\), to funkcja \(f\) jest nierosnąca w przedziale \(I\),
+    \end{enumerate}
+
+    \subsubsection{Ekstrema lokalne}
+    \subsubsection*{Warunek konieczny istnienia ekstremum}
+    Jeżeli funkcja \(f:(a, b) \rightarrow \mathbb{R}\) jest różniczkowalna i ma w punkcie \(x_0 \in (a,b)\) ekstremum lokalne, to \(f\prim(x_0) = 0\).
+
+    \subsubsection*{Warunek wystarczający istnienia eksremum}
+    Jeżeli funkcja \(f:(a, b) \rightarrow \mathbb{R}\) jest różniczkowalna, \(x_0 \in (a,b)\), \(f\prim(x_0) = 0\) oraz funkcja pochodna \(f\prim\) zmienia znak w otoczeniu punktu \(x_0\), to
+    \begin{itemize}
+        \item jeżeli \(f\prim\) zmienia znak z \((+)\) na \((-)\), to w punkcie \(x_0\) jest maksimum lokalne,
+        \item jeżeli \(f\prim\) zmienia znak z \((-)\) na \((+)\), to w punkcie \(x_0\) jest minimum lokalne,
+    \end{itemize}
+
+    \newpage
+    \subsubsection{Wypukłość}
+    Funkcja jest wypukła w przedziale \(I\), gdy odcinek łączący dowolne dwa punkty wykresu funkcji \(f\) w przedziale \(I\) leży powyżej (funkcja ściśle wypukła) lub na wykresie tej funkcji.
+
+    Analogicznie funcja jest wklęsła gdy odcinek łączący dwa punkty wykresu funkcji \(f\) w przedziale \(I\) leży pod (funkcja ściśle wklęsła) lub na wykresie tej funkcji.
+
+    Jeżeli funkcja \(f(x)\) dla każdego \(x \in I\), gdzie \(I\) to dowolny przedział, ma pochodną drugiego rzędu:
+    \begin{enumerate}
+        \item \(f\bis(x) > 0\), to funkcja \(f\) jest ściśle wypukła w przedziale \(I\),
+        \item \(f\bis(x) < 0\), to funkcja \(f\) jest ściśle wklęsła w przedziale \(I\),
+        \item \(f\bis(x) \geq 0\), to funkcja \(f\) jest wypukła w przedziale \(I\),
+        \item \(f\bis(x) \leq 0\), to funkcja \(f\) jest wklęsła w przedziale \(I\),
+    \end{enumerate}
+
+    \subsubsection{Punkty przegięcia}
+    \subsubsection*{Warunek konieczny istnienia punktu przegięcia}
+    Jeżeli funkcja \(f\) ma punkt przegięcia w \(x_0\) oraz istnieje pochodna rzędu drugiego funkcji \(f\) w punkcie \(x_0\), to \(f\bis(x_0) = 0\).
+    \subsubsection*{Warunek wystarczający istnienia punktu przegięcia}
+    Jeżeli funkcja \(f:(a, b) \rightarrow \mathbb{R}\) jest różniczkowalna drugiego rzędu, \(x_0 \in (a,b)\), \(f\bis(x_0) = 0\) oraz funkcja pochodna \(f\bis\) zmienia znak w otoczeniu punktu \(x_0\), to
+    \begin{itemize}
+        \item jeżeli \(f\bis\) zmienia znak z \((+)\) na \((-)\), albo
+        \item jeżeli \(f\bis\) zmienia znak z \((-)\) na \((+)\),
+    \end{itemize}
+    to istnieje punkt przegięcia.
 \end{document}
