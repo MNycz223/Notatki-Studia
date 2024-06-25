@@ -1,0 +1,34 @@
+\documentclass[../Matematyka.tex]{subfiles}
+
+\begin{document}
+    \section{Rachunek Całkowy}
+
+    \subsection{Funkcja pierwotna}
+    Rozważmy przedział zawarty w zbiorze liczb rzeczywistych (\(I \subset \R\)). Funkcję rzeczywistą mającą pochodną w każdym
+    punkcie przedziału \(I\) nazywamy funkcją pierwotną funkcji \(f\) w przedziale \(I\), jeżeli w każdym punkcie zachodzi \(F\prim(x) = f(x)\).
+
+    \subsubsection{Tw. o funkcji pierwotnej}
+    Dwie dowolne funckje pierwotne tej samej funckji \(f\) różnią się o stałą tzn.
+    Jeśli \(F\) i \(G\) są funkcjami pierwotnumi w przedziale \(I\) do funkcji \(f\), to \(\exists\;c \in \R\;\forall\;x \in I : F(x) = G(x) + c\).
+
+    \subsection{Całka nieoznaczona}
+    Rodzina wszystkich funkcji pierwotnych funkcji \(f\) w przedziale \(I\) nazywamy całką nieoznaczoną funkcji \(f\) w przedziale \(I\) i oznaczamy ją symbolem \(\int f(x)dx\). Zatem
+    \[\int f(x)dx = F(x) + c \iff F\prim(x) = f(x)\].
+
+    \subsection{Wzory podstawowe}
+    \begin{align}
+        &\int x^\alpha dx = \frac{x^{\alpha+1}}{\alpha+1} + c; \\
+        &\int \frac{1}{x}dx = ln|x| + c; \\
+        &\int e^xdx = e^x + c; \\
+        &\int a^xdx = \frac{a^x}{lna} + c; \\
+        &\int \sin x\;dx = -\cos x + c; \\
+        &\int \cos x\;dx = \sin x + c; \\
+        &\int \frac{dx}{\cos^2 x} = \tg x + c; \\
+        &\int \frac{dx}{\sin^2 x} = -\ctg x + c;
+    \end{align}
+
+    \subsection{Całka oznaczona Riemanna}
+    \subsubsection{Tw. Newtona-Leibniza}
+    Jeżeli \(\int f(x)dx = F(x) + c\) to
+    \[\int\limits_a^b f(x)dx = F(b) - F(a)\]
+\end{document}

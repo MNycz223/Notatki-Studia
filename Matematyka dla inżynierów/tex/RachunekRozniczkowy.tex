@@ -1,22 +1,19 @@
 \documentclass[../Matematyka.tex]{subfiles}
 
 \begin{document}
-    \newcommand{\bis}{^{\prime\prime}}
-    \newcommand{\prim}{^\prime}
-
     \section{Rachunek różniczkowy}
 
     \subsection{Pochodne funkcji jednej zmiennej}
 
     \subsubsection{Wzory na pochodne podstawowych funkcji}
 
-    \paragraph{Pochodna funckji stałej:}
-    \[ (c)\prim = 0 \text{, \quad gdzie} \; c \in \mathbb{R} \text{ jest stałą} \]
+    \paragraph{Pochodna funkcji stałej:}
+    \[ (c)\prim = 0 \text{, \quad gdzie} \; c \in \R \text{ jest stałą} \]
     
-    \paragraph{Pochodna funckji potęgowej:}
-    \[ (x^\alpha)\prim = \alpha x^{\alpha-1} \text{, \quad gdzie} \; \alpha \in \mathbb{R} \text{ jest stałą} \]
+    \paragraph{Pochodna funkcji potęgowej:}
+    \[ (x^\alpha)\prim = \alpha x^{\alpha-1} \text{, \quad gdzie} \; \alpha \in \R \text{ jest stałą} \]
     
-    \paragraph{Pochodna funckji wykładniczej i logarytmicznej:}
+    \paragraph{Pochodna funkcji wykładniczej i logarytmicznej:}
     \begin{align*}
         (a^x)\prim = a^x \ln a &\text{, \quad gdzie} \; a \in (0, 1) \cup (1, \infty) \text{ jest stałą} \\
         (\log_\alpha x)\prim = \frac{1}{x \ln \alpha} &\text{, \quad gdzie} \; \alpha \in (0, 1) \cup (1, \infty) \text{ jest stałą} \\
@@ -25,17 +22,17 @@
         (\ln x)\prim = \frac{1}{x}
     \end{align*}
 
-    \paragraph{Pochodna funckji trygonometrycznych:}
+    \paragraph{Pochodna funkcji trygonometrycznych:}
     \begin{align*}
         (\sin x)\prim &= \cos x \\
         (\cos x)\prim &= - \sin x \\
-        (\tan x)\prim &= \frac{1}{\cos^2 x} \\
-        (\cot x)\prim &= - \frac{1}{\sin^2 x} \\
+        (\tg x)\prim &= \frac{1}{\cos^2 x} \\
+        (\ctg x)\prim &= - \frac{1}{\sin^2 x} \\
     \end{align*}
 
     \paragraph{Pochodne funkcji łączonych:}
     \begin{align*}
-        (\alpha \cdot f)\prim &= \alpha \cdot f\prim \text{, \quad gdzie} \; \alpha \in \mathbb{R} \text{ jest stałą} \\
+        (\alpha \cdot f)\prim &= \alpha \cdot f\prim \text{, \quad gdzie} \; \alpha \in \R \text{ jest stałą} \\
         \\
         (f \pm g)\prim &= f\prim \pm g\prim \\
         (f \cdot g)\prim &= f\prim g + f g\prim \\
@@ -79,10 +76,10 @@
 
     \subsubsection{Ekstrema lokalne}
     \subsubsection*{Warunek konieczny istnienia ekstremum}
-    Jeżeli funkcja \(f:(a, b) \rightarrow \mathbb{R}\) jest różniczkowalna i ma w punkcie \(x_0 \in (a,b)\) ekstremum lokalne, to \(f\prim(x_0) = 0\).
+    Jeżeli funkcja \(f:(a, b) \rightarrow \R\) jest różniczkowalna i ma w punkcie \(x_0 \in (a,b)\) ekstremum lokalne, to \(f\prim(x_0) = 0\).
 
     \subsubsection*{Warunek wystarczający istnienia ekstremum}
-    Jeżeli funkcja \(f:(a, b) \rightarrow \mathbb{R}\) jest różniczkowalna, \(x_0 \in (a,b)\), \(f\prim(x_0) = 0\) oraz funkcja pochodna \(f\prim\) zmienia znak w otoczeniu punktu \(x_0\), to
+    Jeżeli funkcja \(f:(a, b) \rightarrow \R\) jest różniczkowalna, \(x_0 \in (a,b)\), \(f\prim(x_0) = 0\) oraz funkcja pochodna \(f\prim\) zmienia znak w otoczeniu punktu \(x_0\), to
     \begin{itemize}
         \item jeżeli \(f\prim\) zmienia znak z \((+)\) na \((-)\), to w punkcie \(x_0\) jest maksimum lokalne,
         \item jeżeli \(f\prim\) zmienia znak z \((-)\) na \((+)\), to w punkcie \(x_0\) jest minimum lokalne,
@@ -106,7 +103,7 @@
     \subsubsection*{Warunek konieczny istnienia punktu przegięcia}
     Jeżeli funkcja \(f\) ma punkt przegięcia w \(x_0\) oraz istnieje pochodna rzędu drugiego funkcji \(f\) w punkcie \(x_0\), to \(f\bis(x_0) = 0\).
     \subsubsection*{Warunek wystarczający istnienia punktu przegięcia}
-    Jeżeli funkcja \(f:(a, b) \rightarrow \mathbb{R}\) jest różniczkowalna drugiego rzędu, \(x_0 \in (a,b)\), \(f\bis(x_0) = 0\) oraz funkcja pochodna \(f\bis\) zmienia znak w otoczeniu punktu \(x_0\), to
+    Jeżeli funkcja \(f:(a, b) \rightarrow \R\) jest różniczkowalna drugiego rzędu, \(x_0 \in (a,b)\), \(f\bis(x_0) = 0\) oraz funkcja pochodna \(f\bis\) zmienia znak w otoczeniu punktu \(x_0\), to
     \begin{itemize}
         \item jeżeli \(f\bis\) zmienia znak z \((+)\) na \((-)\), albo
         \item jeżeli \(f\bis\) zmienia znak z \((-)\) na \((+)\),
@@ -158,7 +155,7 @@
             a_{1,1} & a_{1,2} & \cdots & a_{1,l} \\
             a_{2,1} & a_{2,2} & \cdots & a_{2,l} \\
             \vdots & \vdots & \ddots & \vdots \\
-            a_{l,1} & a_{l,2} & \cdots & a_{n,l} \\
+            a_{l,1} & a_{l,2} & \cdots & a_{l,l} \\
         \end{bmatrix}
     \end{displaymath}
 
