@@ -81,7 +81,7 @@
     \subsubsection*{Warunek konieczny istnienia ekstremum}
     Jeżeli funkcja \(f:(a, b) \rightarrow \mathbb{R}\) jest różniczkowalna i ma w punkcie \(x_0 \in (a,b)\) ekstremum lokalne, to \(f\prim(x_0) = 0\).
 
-    \subsubsection*{Warunek wystarczający istnienia eksremum}
+    \subsubsection*{Warunek wystarczający istnienia ekstremum}
     Jeżeli funkcja \(f:(a, b) \rightarrow \mathbb{R}\) jest różniczkowalna, \(x_0 \in (a,b)\), \(f\prim(x_0) = 0\) oraz funkcja pochodna \(f\prim\) zmienia znak w otoczeniu punktu \(x_0\), to
     \begin{itemize}
         \item jeżeli \(f\prim\) zmienia znak z \((+)\) na \((-)\), to w punkcie \(x_0\) jest maksimum lokalne,
@@ -112,4 +112,79 @@
         \item jeżeli \(f\bis\) zmienia znak z \((-)\) na \((+)\),
     \end{itemize}
     to istnieje punkt przegięcia.
+
+    \subsection{Pochodne cząstkowe funkcji wielu zmiennych}
+    \[f = f(x_1, x_2, \dots, x_n)\]
+    Pochodna cząstkowa funkcji \(f\) względem zmiennej \(x_i\)
+    \[\frac{\delta f}{\delta x_i} = f\prim_{x_i}\]
+
+    Pochodną cząstkową funkcji \(f\) względem zmiennej \(x_i\) liczymi tak samo jak pochodną funkcji jednej zmiennej, przyjmując, że \(x_i\) to zmienna a wszystkie pozostałe zmienne traktując jak stałe.
+
+    \subsubsection*{Pochodne wyższych rzędów}
+    \begin{align*}
+        \frac{\delta^2f}{\delta x_j \delta x_i} = f\bis_{x_i x_j} = (f\prim_{x_i})\prim_{x_j} \\
+        \frac{\delta^2f}{\delta x^2_i} = f\bis_{x_i x_i} = (f\prim_{x_i})\prim_{x_i}
+    \end{align*}
+
+    \subsubsection{Tw. Schwarza}
+    Jeżeli pochodne mieszane funkcji \(f(x, y)\) są funkcjami ciągłymi to są sobie równe, czyli
+    \[f\bis_{x_i x_j} = f\bis_{x_j x_i}\]
+
+    \subsubsection{Kryterium Sylvestera}
+    Kryterium pozwalające badać określoność symetrycznej macierzy.
+
+    Niech
+    \begin{displaymath}
+        A = 
+        \begin{bmatrix}
+            a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+            a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{n,1} & a_{n,2} & \cdots & a_{n,n} \\
+        \end{bmatrix}
+    \end{displaymath}
+    będzie macierzą symetryczną o współczynnikach rzeczywistych
+
+    Niech ponadto
+    \begin{displaymath}
+        M_1 = a_{1,1}, \quad 
+        M_2 = det
+        \begin{bmatrix}
+            a_{1,1} & a_{1,2} \\
+            a_{2,1} & a_{2,2}
+        \end{bmatrix}, \dots \quad
+        M_l = det
+        \begin{bmatrix}
+            a_{1,1} & a_{1,2} & \cdots & a_{1,l} \\
+            a_{2,1} & a_{2,2} & \cdots & a_{2,l} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{l,1} & a_{l,2} & \cdots & a_{n,l} \\
+        \end{bmatrix}
+    \end{displaymath}
+
+    Wówczas\par
+    \(A\) jest dodatnio określona wtedy i tylko wtedy, gdy jej wiodące minory główne są dodatnie, tj.
+    \[M_l > 0\;\text{dla}\;l \in \{1,\dots,n\}\]
+    \(A\) jest ujemnie określona wtedy i tylko wtedy, gdy 
+    \[M_l < 0\;\text{dla}\;l \in \{1, 3, 5, \dots\}\text{,}\; M_l > 0\;\text{dla}\;l \in \{2, 4, 6, \dots\}\]
+
+    \subsubsection{Ekstrema lokalne funkcji dwóch zmiennych}
+    \subsubsection*{Warunek konieczny}
+    Jeżeli w punkcie \(P_0(x_0, y_0)\) istnieje esktremum to 
+    \begin{displaymath}
+        \begin{cases}
+            f\prim_x(P_0) = 0 \\
+            f\prim_y(P_0) = 0
+        \end{cases}
+    \end{displaymath}
+    Punkt w którym spełnione są warunki konieczne jest punktem stacjonarnym.
+
+    \subsubsection*{Warunek wystarczający}
+    Jeżeli punkt \(P_0(x_0, y_0)\) jest punktem stacjonarnym oraz niech \(\Delta_1=f\bis_{xx}\) i \(\Delta_2=detf\bis\), gdzie \(f\bis\) to macierz pochodnych cząstkowych drugiego rzędu, to
+    \begin{itemize}
+        \item jeżeli \(\Delta_1 > 0\) i \(Delta_2 > 0 \implies f\bis\) jest dodatnio określona \(\implies\) minimum lokalne,
+        \item jeżeli \(\Delta_1 < 0\) i \(Delta_2 > 0 \implies f\bis\) jest ujemnie określona \(\implies\) maksimum lokalne,
+    \end{itemize}
+
+    Uwaga. Jeżeli \(\Delta_2 < 0\) i \(\Delta_1 \neq 0\) to w punkcie stacjonarnym nie ma ekstremum.
 \end{document}
