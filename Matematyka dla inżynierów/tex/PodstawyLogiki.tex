@@ -2,63 +2,49 @@
 
 \begin{document}
     \section{Podstawy logiki matematycznej}
+    \paragraph{Zdanie}
+    (w logice) jest to wyrażenie w trybie orzekającym, które jest:
+    albo \textbf{prawdziwe} - ma wartość logiczną \(\mathbf{1}\),
+    albo \textbf{fałszywe} - ma wartość logiczną \(\mathbf{0}\).
+    \paragraph{Forma zdaniowa}
+    (funkcja zdaniowa, predykat) określona w dziedzinie \(D\) jest 
+    to wyrażanie zawierające zmienną (lub zmienne), które staje się zdaniem, gdy 
+    w miejsce zmiennej (lub zmiennych) podstawimy nazwę (lub nazwy) 
+    dowolnego elementu (lub dowolnych elementów) zbioru \(D\).
+    
 
-    \subsection{Elementy logiki matematycznej}
-
-    \subsubsection*{Negatyw \(\sim\)}
-    \begin{tabular}{c|>{\columncolor[gray]{.8}}c}
-        \(p\) & \(\sim \! p\) \\
-        \hline
-        \(1\) & \(0\) \\
-        \(0\) & \(1\) \\
+    \subsection{Funktory zdaniotwórcze}
+    \begin{tabular}{lll}
+        "Nieprawda, że"                     & - symbol \(\sim\)     & \textbf{Negacja}      \\
+        "i"                                 & - symbol \(\land\)    & \textbf{Koniunkcja}   \\
+        "lub"                               & - symbol \(\lor\)     & \textbf{Alternatywa}  \\
+        "jeżeli \(\dots\), to \(\dots\)"    & - symbol \(\implies\) & \textbf{Implikacja}   \\
+        "wtedy i tylko wtedy"               & - symbol \(\iff\)     & \textbf{Równoważność} \\
     \end{tabular}
 
-    \subsubsection*{Alternatywa \(\lor\)}
-    \begin{tabular}{c|c|>{\columncolor[gray]{.8}}c}
-        \(p\) & \(p\) & \(p \lor q\) \\
-        \hline
-        \(1\) & \(1\) & 1 \\
-        \(1\) & \(0\) & 1 \\
-        \(0\) & \(1\) & 1 \\
-        \(0\) & \(0\) & 0 \\
+    \begin{table}[H]
+        \centering
+        \caption{Wartości logiczne zdań złożonych}
+        \begin{tabular}{>{\columncolor[gray]{.8}}c|c|c|>{\columncolor[gray]{.8}}c|c|>{\columncolor[gray]{.8}}c|c}
+            \(\sim\!p\) & p & q & \(p \land q\) & \(p \lor q\) & \(p \implies q\) & \(p \iff q\) \\ \hline
+            0           & 1 & 1 & 1             & 1            & 1                & 1            \\
+            1           & 0 & 1 & 0             & 1            & 1                & 0            \\
+                        & 1 & 0 & 0             & 1            & 0                & 0            \\
+                        & 0 & 0 & 0             & 0            & 1                & 1            \\
+        \end{tabular}
+    \end{table}
+    
+    \subsection{Kwantyfikatory}
+    \begin{tabular}{lll}
+        "dla każdego \(x \dots\)"            & - symbol \(\underset{x}{\wedge}\) albo \(\underset{x}{\forall}\) & - kwantyfikator duży, ogólny                        \\
+        "istnieje \(x\), takie że \(\dots\)" & - symbol \(\underset{x}{\vee}\) albo \(\underset{x}{\exists}\)   & - kwantyfikator mały, szczegółowy, egzystencjonalny \\
     \end{tabular}
 
-    \subsubsection*{Koniunkcja \(\land\)}
-    \begin{tabular}{c|c|>{\columncolor[gray]{.8}}c}
-        \(p\) & \(p\) & \(p \land q\) \\
-        \hline
-        \(1\) & \(1\) & 1 \\
-        \(1\) & \(0\) & 0 \\
-        \(0\) & \(1\) & 0 \\
-        \(0\) & \(0\) & 0 \\
-    \end{tabular}
-
-    \subsubsection*{Implikacja \(\implies\)}
-    \begin{tabular}{c|c|>{\columncolor[gray]{.8}}c}
-        \(p\) & \(p\) & \(p \implies q\) \\
-        \hline
-        \(1\) & \(1\) & 1 \\
-        \(1\) & \(0\) & 0 \\
-        \(0\) & \(1\) & 1 \\
-        \(0\) & \(0\) & 1 \\
-    \end{tabular}
-
-    \subsubsection*{Równoważność \(\iff\)}
-    \begin{tabular}{c|c|>{\columncolor[gray]{.8}}c}
-        \(p\) & \(p\) & \(p \iff q\) \\
-        \hline
-        \(1\) & \(1\) & 1 \\
-        \(1\) & \(0\) & 0 \\
-        \(0\) & \(1\) & 0 \\
-        \(0\) & \(0\) & 1 \\
-    \end{tabular}
-
-    \newpage
-    \subsection{Prawa logiczne}
+    \subsection{Prawa rachunku zdań}
 
     \textbf{Tautologia} - Zdanie zawsze prawdziwe.
 
-    \subsubsection{Prawa De Morgana}
+    \subsubsection{Prawa De Morgana dla zdań}
     \subsubsection*{I prawo De Morgana}
     Prawo zaprzeczania koniunkcji: negacja koniunkcji jest równoważna alternatywie negacji
     \[[\sim\!(p \land q)] \iff (\sim\!p \; \lor \sim\!q)\]
@@ -76,6 +62,7 @@
         \end{tabular}
     \end{table}
 
+    \newpage
     \subsubsection*{II prawo De Morgana}
     Prawo zaprzeczenia alternatywy: negacja alternatywy jest równoważna koniunkcji negacji
     \[[\sim\!(p \lor q)] \iff (\sim\!p \; \land \sim\!q)\]
@@ -108,4 +95,12 @@
             0 & 0 & 1 & 1 & 1 & 1 \\
         \end{tabular}
     \end{table}
+
+    \subsection{Prawa rachunku kwantyfikatorów}
+    Jeżeli \(f(x)\) i \(g(x)\) są formami zdaniowymi o zakresie zmienności \(x \in X\), to:
+    \subsubsection*{Prawa De Morgana dla kwantyfikatorów}
+    \begin{enumerate}
+        \item \(\sim \underset{x}{\forall} f(x) \iff \underset{x}{\exists}\sim f(x)\)
+        \item \(\sim \underset{x}{\exists} f(x) \iff \underset{x}{\forall}\sim f(x)\)
+    \end{enumerate}
 \end{document}
