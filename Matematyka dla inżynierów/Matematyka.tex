@@ -5,12 +5,15 @@
 \usepackage{polski}
 \usepackage[polish]{babel}
 
+\usepackage{cite}
+
 \usepackage[skip=10pt]{parskip}
 \usepackage{pgfplots}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{float}
 \usepackage[table]{xcolor} 
+\usepackage{enumitem}
 
 \usepackage[hidelinks]{hyperref}
 \hypersetup{final}
@@ -18,15 +21,18 @@
 \usepackage{subfiles}
 
 \title{Matematyka}
-\date{r.a. 2023/2024}
+\date{r.a. 2024/2025}
 \author{Michał Nycz}
 
 \pgfplotsset{compat=1.18}
+
+\bibliographystyle{plain}
 
 \begin{document}
     \newcommand{\bis}{^{\prime\prime}}
     \newcommand{\prim}{^\prime}
     \newcommand{\R}{\mathbb{R}}
+    \newcommand{\N}{\mathbb{N}}
 
     \pagenumbering{gobble}
     \maketitle
@@ -38,7 +44,10 @@
     \subfile{tex/PodstawyLogiki.tex}
     \newpage
     
-    \subfile{tex/Kombinatoryka.tex}
+    \subfile{tex/TeoriaMnogosci.tex}
+    \newpage
+    
+    \subfile{tex/RachunekPrawdopodobienstwa.tex}
     \newpage
 
     \subfile{tex/Macierze.tex}
@@ -48,4 +57,7 @@
     \newpage
 
     \subfile{tex/RachunekCalkowy.tex}
+
+    \nocite{*}
+    \bibliography{Matematyka}
 \end{document}
