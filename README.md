@@ -1,2 +1,3 @@
 # Notatki
-- [Matematyka](https://github.com/MNycz223/Notatki-Studia/blob/main/Matematyka/Matematyka.pdf)
+- [Matematyka](Matematyka/Matematyka.pdf)
+- [Fizyka](Fizyka/Fizyka.pdf)

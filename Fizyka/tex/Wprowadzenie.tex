@@ -1,0 +1,128 @@
+\documentclass[../Fizyka.tex]{subfiles}
+
+\begin{document}
+    \section{Wprowadzenie}
+    \subsection{Wielkości fizyczne}
+    Zakres badań fizyki obejmuje wiele przeróżnych obiektów materialnych (ciał, materiałów) i zjawisk (zdarzeń, procesów) występujących w przyrodzie.
+    W badaniach podaje się zwykle ich obserwowane cechy, zwane \textbf{wielkościami fizycznymi} — jest to pojęcie podstawowe w fizyce.
+    
+    Przykłady:
+    \begin{itemize}
+        \item masa ciała, 
+        \item długość, 
+        \item czas, 
+        \item temperatura, 
+        \item objętość,
+        \item prędkość ruchu ciała, 
+        \item siła, 
+        \item natężenie prądu w przewodniku.
+    \end{itemize}
+
+    Wyróżniamy badania doświadczalne (eksperyment) i teoretyczne. Wielkości w eksperymencie przedstawiamy przy pomocy \textbf{wartości
+    liczbowych} — cechy przedmiotu muszą być \textbf{mierzalne}. Związki pomiędzy wielkościami (prawidłowości, prawa fizyki)
+    przedstawiamy przy pomocy \textbf{wzorów matematycznych}. \textbf{Opis matematyczny} oparty o liczby i wzory pozwala na głębsze
+    zrozumienie eksperymentu i formułowanie teorii fizycznych. Przewidywania teorii są weryfikowane przez eksperyment.
+    Teoria naukowa musi być falsyfikowalna w sensie popperowskim.
+
+    \subsection{Jednostki fizyczne}
+    W celu określenia różnic między wartościami danej wielkości musimy wartości te przedstawiać w określonych jednostkach.
+    Jednostkowa wielkość - \textbf{jednostka miary} - pozwala otrzymać wartości znormalizowane, które można ze sobą porównywać.
+    Jednostka posiada unikalną nazwę i stanowi podstawę miary danej wielkości, np. jednostką długości jest metr, a jej miarą — 10 m.
+    \textbf{Prostą wielkość} w eksperymencie porównujemy z wzorcem odnoszącym się do jednej podstawowej jednostki fizycznej.
+    Wzorce wielkości podstawowych są dostępne i niezmienne. Miarę \textbf{wielkości złożonej} określa jednostka pochodna na podstawie wzoru matematycznego.
+    Wymiar pochodnych wielkości fizycznych przedstawiony jest przy pomocy iloczynu potęg kilku wybranych jednostek podstawowych.
+    Obecnie w fizyce przyjmuje się siedem jednostek podstawowych .Wprowadza się również dwie jednostki uzupełniające dot. kąta
+    płaskiego (np. radian) i bryłowego (np. steradian).
+
+    \subsection{Pomiar fizyczny}
+    W eksperymencie fizycznym źródłem informacji jakościowych jest obserwacja, a ilościowych — pomiar. \textbf{Pomiar fizyczny} prowadzi do wyznaczenia 
+    w danym układzie jednostek wartości liczbowej \(\{A\}\) określonej wielkości fizycznej \(A\) przy ustalonej jednostce miary \([A]\).
+    Wielkość fizyczna określona jest przez sposób pomiaru lub przez sposób obliczania jej na podstawie innych pomiarów.
+    Na przykład droga i czas mogą być zdefiniowane przez określenie metod ich pomiaru, takich jak użycie miarki lub stopera, natomiast
+    prędkość średnia może zostać zdefiniowana jako iloraz drogi i czasu.
+    Do pomiarów stosujemy \textbf{przyrządy} bezpośrednie lub pośrednie. Przyrządy nie są idealne, mają określoną dokładność.
+    Na \textbf{dokładność pomiarową} mają wpływ nieuniknione niepewności pomiarowe oraz usuwalne błędy grube (pomyłki).
+    \textbf{Niepewność pomiarową} można ograniczać stosując zarówno doskonalszą aparaturę pomiarową, jak i poprzez optymalizację metody pomiarowej.
+
+    \subsection{Analiza wyników}
+    \begin{itemize}
+        \item \textbf{Dokładność} \textendash\ dotyczy urządzenia pomiarowego, mówi o jego precyzji,
+        \item \textbf{Błąd} \textendash\ to różnica między wartością rzeczywistą i wartością zmierzoną,
+        \item \textbf{Niepewność} \textendash\ to statystyczne oszacowanie błędu
+        \begin{description}
+            \item[Ocena niepewności typu A (przypadkowej)] metody wykorzystujące statystyczną analizę serii pomiarów (obliczanie średnich, regresji itd.)
+            \item[Ocena niepewności typu B (systematycznej)] metody wykorzystujące wszystkie informacje o pomiarze oraz źródłach jego niepewności (dokładność przyrządów pomiarowych) 
+        \end{description}
+    \end{itemize}
+
+    \subsubsection{Analiza wyników metodą typu B}
+    \(\Delta x\) \textendash\ Dokładność przyrządu (maksymalny błąd pomiaru),\newline
+    \(x\) \textendash\ wartość zmierzona,\newline
+    \(\mu\) \textendash\ wartość rzeczywista,\newline
+    \(\sigma^2=\frac{(b-a)^2}{12}\) \textendash\ wariancja,\newline
+    \(u(x)=\sigma=\frac{\Delta x}{\sqrt{3}}\) \textendash\ niepewność standardowa
+
+    Niepewność standardowa obliczana metodą B jest równa odchyleniu standardowemu.
+    
+    Funkcja rozkładu gęstości prawdopodobieństwa dla rozkładu jednostajnego:
+    \begin{align*}
+        \upvarphi(x) &= 
+        \begin{cases}
+            \frac{1}{2\sigma\sqrt{3}} & x \in [a,b]\\
+            0 & x \notin [a,b]
+        \end{cases}\\
+        a &= \mu - \Delta x\\
+        b &= \mu + \Delta x
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel={\(x\)},
+                ylabel={\(\upvarphi(x)\)},
+                ymin=0, ymax=0.5,
+                xmin=0, xmax=7,
+                domain=0:7,
+                samples=100,
+                axis lines=middle,
+                every axis plot/.append style={thick},
+                ytick={0.3333},
+                xtick={1.5,2.34,3.5,4.66,5.5},
+                yticklabels={\(\frac{1}{b-a}\)},
+                xticklabels={\(a\),\((\mu-\sigma)\),\(\mu\),\((\mu+\sigma)\),\(b\)},
+                enlargelimits=false,
+                clip=false,
+                grid=major,
+            ]
+            \addplot[domain=1.5:5.5, blue] {1/3};
+            \addplot[domain=0:1.5, samples=2, blue] {0};
+            \addplot[domain=5.5:7, samples=2, blue] {0};
+            \addplot[only marks, mark=*, blue] coordinates {(1.5,1/3) (5.5,1/3)};
+            \addplot[only marks, mark=o, blue] coordinates {(1.5,0) (5.5,0)};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    Wyniki innych pomiarów długości tego samego przedmiotu tym samym przyrządem w \(100\%\) będą się mieścić w przedziale \([a,b]\),
+    a w \(58\%\) będą się mieścić w przedziale \((\mu-\sigma,\mu+\sigma)\).
+
+    \textbf{Dowód:} Dla przyrządu z podziałką dokładność przyrządu określa najmniejsza podziałka. Przyjmując, że korzystamy ze zwykłej linijki 
+    dokładność przyrządu wynosi \(\Delta x = 0.1cm\). Powierzchnia pod wykresem funkcji określa prawdopodobieństwo, że zmienna losowa przyjmie wartość w określonym przedziale
+    co można policzyć za pomocą całki. Dlatego całka oznaczona ww. funkcji w przedziale maksymalnego błędu \([a,b]\) wynosi \(1\):
+    \[a = \mu - \Delta x \qquad b = \mu + \Delta x \]
+    \[\sigma\sqrt{3} = \frac{\Delta x}{\sqrt{3}} \cdot \sqrt{3} = \Delta x\]
+    \[\int \frac{1}{2\sigma\sqrt{3}}dx = \frac{x}{2\sigma\sqrt{3}} + c\]
+    \[
+        \int\limits_a^b \frac{1}{2\sigma\sqrt{3}}dx =
+        \frac{\mu + \Delta x}{2\sigma\sqrt{3}} - \frac{\mu - \Delta}{2\sigma\sqrt{3}} = 
+        \frac{\mu + \Delta x - \mu + \Delta x}{2\sigma\sqrt{3}} = 
+        \frac{2 \Delta x}{2 \Delta x} = 1 = 100\%
+    \]
+    Tym samym sposobem można wyliczyć prawdopodobieństwo dla przedziału niepewności standardowej:
+    \[
+        \int\limits_{\mu-\sigma}^{\mu+\sigma} \frac{1}{2\sigma\sqrt{3}}dx =
+        \frac{\mu + \sigma}{2\sigma\sqrt{3}} - \frac{\mu - \sigma}{2\sigma\sqrt{3}} = 
+        \frac{\mu + \sigma - \mu + \sigma}{2\sigma\sqrt{3}} = 
+        \frac{2 \sigma}{2\sigma\sqrt{3}} = \frac{1}{\sqrt{3}} \approx 0.58 = 58\%
+    \]
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[draft]{article}
+\usepackage[a4paper, top=1.5in, bottom=1.5in, right=1in, left=1in]{geometry}
+\usepackage[bottom]{footmisc}
+
+\usepackage{polski}
+\usepackage[polish]{babel}
+
+\usepackage{cite}
+
+\usepackage[skip=10pt]{parskip}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage[table]{xcolor} 
+\usepackage{enumitem}
+\usepackage{upgreek}
+
+\usepackage[hidelinks]{hyperref}
+\hypersetup{final}
+
+\usepackage{subfiles}
+
+\title{Fizyka}
+\date{r.a. 2024/2025}
+\author{Michał Nycz}
+
+\pgfplotsset{compat=1.18}
+
+\bibliographystyle{plain}
+
+\begin{document}
+    \newcommand{\bis}{^{\prime\prime}}
+    \newcommand{\prim}{^\prime}
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\N}{\mathbb{N}}
+
+    \pagenumbering{gobble}
+    \maketitle
+    \tableofcontents
+    \newpage
+
+    \pagenumbering{arabic}
+
+    \subfile{tex/Wprowadzenie.tex}
+
+    %\nocite{*}
+    %\bibliography{Fizyka}
+\end{document}
