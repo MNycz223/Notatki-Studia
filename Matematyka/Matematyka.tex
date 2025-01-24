@@ -5,7 +5,7 @@
 \usepackage{polski}
 \usepackage[polish]{babel}
 
-\usepackage{cite}
+\usepackage[superscript]{cite}
 
 \usepackage[skip=10pt]{parskip}
 \usepackage{pgfplots}
@@ -14,6 +14,7 @@
 \usepackage{float}
 \usepackage[table]{xcolor} 
 \usepackage{enumitem}
+\usepackage{multicol}
 
 \usepackage[hidelinks]{hyperref}
 \hypersetup{final}
@@ -29,35 +30,35 @@
 \bibliographystyle{plain}
 
 \begin{document}
-    \newcommand{\bis}{^{\prime\prime}}
-    \newcommand{\prim}{^\prime}
-    \newcommand{\R}{\mathbb{R}}
-    \newcommand{\N}{\mathbb{N}}
+\newcommand{\bis}{^{\prime\prime}}
+\newcommand{\prim}{^\prime}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
 
-    \pagenumbering{gobble}
-    \maketitle
-    \tableofcontents
-    \newpage
+\pagenumbering{gobble}
+\maketitle
+\tableofcontents
+\newpage
 
-    \pagenumbering{arabic}
+\pagenumbering{arabic}
 
-    \subfile{tex/PodstawyLogiki.tex}
-    \newpage
-    
-    \subfile{tex/TeoriaMnogosci.tex}
-    \newpage
-    
-    \subfile{tex/RachunekPrawdopodobienstwa.tex}
-    \newpage
+\subfile{tex/PodstawyLogiki.tex}
+\newpage
 
-    \subfile{tex/Macierze.tex}
-    \newpage
+\subfile{tex/TeoriaMnogosci.tex}
+\newpage
 
-    \subfile{tex/RachunekRozniczkowy.tex}
-    \newpage
+\subfile{tex/RachunekPrawdopodobienstwa.tex}
+\newpage
 
-    \subfile{tex/RachunekCalkowy.tex}
+\subfile{tex/Macierze.tex}
+\newpage
 
-    \nocite{*}
-    \bibliography{Matematyka}
+\subfile{tex/RachunekRozniczkowy.tex}
+\newpage
+
+\subfile{tex/RachunekCalkowy.tex}
+
+\nocite{*}
+\bibliography{Matematyka}
 \end{document}
