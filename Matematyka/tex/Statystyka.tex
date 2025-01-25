@@ -1,0 +1,138 @@
+\documentclass[../Matematyka.tex]{subfiles}
+\begin{document}
+\section{Statystyka}
+
+\subsection{Szeregi statystyczne}
+\subsubsection*{Szereg szczegółowy}
+\textit{Szeregi szczegółowe} są to uporządkowane ciągi wartości badanej cechy statystycznej.
+Wartości takiej cechy mogą być uporządkowane rosnąco:
+\[x_1 \leq x_2 \leq \ldots \leq x_n\]
+lub malejąco:
+\[x_1 \geq x_2 \geq \ldots \geq x_n\]
+
+\subsubsection*{Szereg rozdzielczy}
+\textit{Szereg rozdzielczy} stanowi zbiorowość statystyczną podzieloną na części (klasy) według określonej cechy jakościowej lub ilościowej z podaniem liczebości każdej z tych klas. Dla szeregów rozdzielczych cechy ilościowej wyróżniamy:
+\begin{itemize}
+    \item \textit{szereg rozdzielczy punktowy}
+          \begin{table}[H]
+              \centering
+              \begin{tabular}{c|c|c|c}
+                  \(i\)     & \(x_i\)   & \(n_i\)   & \(\sum n_i\) \\ \hline
+                  \(1\)     & \(x_1\)   & \(n_1\)   & \(\sum n_1\) \\
+                  \(2\)     & \(x_2\)   & \(n_2\)   & \(\sum n_2\) \\
+                  \(\dots\) & \(\dots\) & \(\dots\) & \(\dots\)    \\
+                  \(k\)     & \(x_k\)   & \(n_k\)   & \(\sum n_k\) \\ \hline\hline
+                  \(\sum\)  &           & \(n\)     &              \\
+              \end{tabular}
+          \end{table}
+          gdzie \(x_i\) to wartość cechy, \(n_i\) to liczebność, a \(\sum n_i\) to liczebność skumulowana, tj. \(\sum n_s = n_1 + n_2 + \ldots + n_s\)
+    \item \textit{szereg rozdzielczy przedziałowy}
+          \begin{table}[H]
+              \centering
+              \begin{tabular}{c|c|c|c|c}
+                  \(i\)     & \(x_{0,i}\) & \(x_{1,i}\) & \(n_i\)   & \(\sum n_i\) \\ \hline
+                  \(1\)     & \(x_{0,1}\) & \(x_{1,1}\) & \(n_1\)   & \(\sum n_1\) \\
+                  \(2\)     & \(x_{0,2}\) & \(x_{1,2}\) & \(n_2\)   & \(\sum n_2\) \\
+                  \(\dots\) & \(\dots\)   & \(\dots\)   & \(\dots\) & \(\dots\)    \\
+                  \(k\)     & \(x_{0,k}\) & \(x_{1,k}\) & \(n_k\)   & \(\sum n_k\) \\ \hline\hline
+                  \(\sum\)  &             &             & \(n\)     &              \\
+              \end{tabular}
+          \end{table}
+          gdzie \(x_{0,i}\) to dolna granica przedziału, \(x_{1,i}\) to górna granica przedziału, \(n_i\) to liczebność, a \(\sum n_i\) to liczebność skumulowana.
+\end{itemize}
+
+\newpage
+\subsection{Miary położenia (tendencji centralnej)}
+\subsubsection*{Średnia arytmetyczna}
+Dla poszczególnych szeregów wyraża się wzorami:
+\begin{multicols}{3}
+    \begin{center}szcegółowego:\end{center}
+    \[\bar{x} = \frac{1}{n} \sum_{i=1}^{n}x_i\]
+    \begin{center}rozdzielczego punktowego:\end{center}
+    \[\bar{x} = \frac{1}{n} \sum_{i=1}^{k}x_in_i\]
+    \begin{center}rozdzielczego przedziałowego:\end{center}
+    \[\bar{x} = \frac{1}{n} \sum_{i=1}^{k}\dot{x_i}n_i\]
+\end{multicols}
+gdzie \(n\) to liczba elementów, \(k\) to liczba klas (przedziałów), \(x_i\) to wartość cechy, \(n_i\) to liczebność, a \(\dot{x_i}\) to środek przedziału, tj. \(\dot{x_i} = \frac{x_{0,i} + x_{1,i}}{2}\).
+\subsubsection*{Kwantyle}
+{\it Kwantyl \(k_p\) rzędu \(p \in [0,1]\)} to wartość cechy, która dzieli uporządkowany szereg na dwie części: jedna zawiera \(p\cdot100\%\) wartości mniejsze lub równe \(kp\), a druga \((1-p)\cdot100\%\) wartości większe lub równe \(kp\).
+\begin{itemize}
+    \item {\it dla szeregu szczegółowego:} wyznaczamy pozycje kwantyla \(K = p(n+1)\) następnie wyznaczamy wartośc \(kp\) za pomocą wzoru:
+    \[kp =
+        \begin{cases}
+            x_K & \text{dla } K \in \N \\
+            x_{\lfloor K \rfloor} + (K - \lfloor K \rfloor)(x_{\lceil K \rceil} - x_{\lfloor K \rfloor}) & \text{dla } k \notin \N
+        \end{cases}\] 
+    \item {\it dla szeregów rozdzielczych:} wyznaczamy pozycję kwantyla za pomocą wzoru \(K = np\) następnie wyznaczamy pierwszą klasę kwantyla dla której \(\sum n_i \geq K\) i wyliczamy wartość \(kp\) za pomocą wzoru: 
+    \[k_p=x_{0K} + \frac{K - \sum n_{K-1}}{n_K}\cdot h_K\]
+    gdzie \(x_{0K}\) to dolna granica klasy, \(K\) to pozycja kwantyla, \(n_K\) to liczebność klasy kwantyla, \(\sum n_{K-1}\) to liczebność skumulowana klasy poprzedzającej, a \(h_K\) to rozpiętość klasy kwantyla (dla szeregu rozdzielczego punktowego \(h_K = 1\)).
+\end{itemize}
+
+{\bf Nazwy szczególnych kwantyli:}
+\begin{itemize}
+    \item Kwantyl rzędu \(\frac{1}{2}\) to mediana,
+    \item Kwantyle rzędu \(\frac{1}{4}, \frac{2}{4}, \frac{3}{4}\) to kwartyle,
+    \item Kwantyle rzędu \(\frac{1}{5}, \frac{2}{5}, \frac{3}{5}, \frac{4}{5}\) to kwintyle,
+    \item Kwantyle rzędu \(\frac{1}{10}, \frac{2}{10}, \ldots, \frac{9}{10}\) to decyle,
+    \item Kwantyle rzędu \(\frac{1}{100}, \frac{2}{100}, \ldots, \frac{99}{100}\) to percentyle,
+\end{itemize}
+\newpage
+\subsubsection*{Mediana}
+\begin{itemize}
+    \item {\it dla szeregu szczegółowego:}
+          \[Me =
+              \begin{cases}
+                  x_{\frac{n+1}{2}}                             & \text{dla nieparzystego } n \\
+                  \frac{x_{\frac{n}{2}} + x_{\frac{n}{2}+1}}{2} & \text{dla parzystego } n
+              \end{cases}\]
+    \item {\it dla szeregów rozdzielczych} medianę wyznaczamy ze wzoru na kwantyl rzędu \(\frac{1}{2}\). 
+\end{itemize}
+\subsubsection*{Dominanta}
+\begin{itemize}
+    \item {\it dla szeregu szczegółowego i rozdzielczego punktowego} jest to wartość cechy, która występuje najczęściej.
+    \item {\it dla szeregu rozdzielczego przedziałowego} dominantę \(D\) wyznaczamy ze wzoru:
+    \[D = x_{0d} + \frac{n_d - n_{d-1}}{(n_d - n_{d-1}) + (n_d - n_{d+1})} \cdot h_d\]
+    gdzie \(x_{0d}\) to dolna granica klasy, \(n_d\) to liczebność klasy dominanty, \(n_{d-1}\) to liczebność klasy poprzedzającej, \(n_{d+1}\) to liczebność klasy następującej, a \(h_d\) to rozpiętość klasy dominanty.
+\end{itemize}
+
+\subsection{Charakterystyki rozproszenia}
+\subsubsection*{Wariancja}
+Dla poszczególnych szeregów wyraża się wzorami:
+\begin{multicols}{3}
+    \begin{center}szcegółowego:\end{center}
+    \[s^2=\frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2\]
+    \begin{center}rozdzielczego punktowego:\end{center}
+    \[s^2=\frac{1}{n}\sum_{i=1}^{k}(x_i - \bar{x})^2 \cdot n_i\]
+    \begin{center}rozdzielczego przedziałowego:\end{center}
+    \[s^2=\frac{1}{n}\sum_{i=1}^{k}(\dot{x_i} - \bar{x})^2 \cdot n_i\]
+\end{multicols}
+
+\subsubsection*{Odchylenie standardowe}
+\[s = \sqrt{s^2}\]
+
+\subsubsection*{Odchylenie ćwiartkowe}
+\[Q=\frac{Q_3-Q1}{2}, \quad \text{gdzie } \substack{Q_1\text{ -- kwartyl pierwszy}\\Q_3\text{ -- kwartyl trzeci}}\]
+
+\subsubsection*{Współczynnik zmienności}
+\[V = \frac{s}{|\bar{x}|}100\%, \quad \text{gdzie } \bar{x} \neq 0\]
+
+\subsubsection*{Rozstęp}
+\[R = x_{max} - x_{min}\]
+
+\subsection{Charakterystyki asymetrii}
+{\it Współczynnik asymetrii} to miara skośności rozkładu cechy statystycznej. Wartość współczynnika asymetrii pozwala określić, czy rozkład cechy jest symetryczny, czy też przesunięty w jedną ze stron. Współczynnik asymetrii wyraża się wzorem:
+\[A = \frac{\mu_3}{(s)^3}\]
+gdzie \(\mu_3\) to trzeci moment centralny, a \(s\) to odchylenie standardowe.
+
+Trzeci moment centralny dla poszczególnych szeregów wyraża się wzorami:
+\begin{multicols}{3}
+    \begin{center}szcegółowego:\end{center}
+    \[s^2=\frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^3\]
+    \begin{center}rozdzielczego punktowego:\end{center}
+    \[s^2=\frac{1}{n}\sum_{i=1}^{k}(x_i - \bar{x})^3 \cdot n_i\]
+    \begin{center}rozdzielczego przedziałowego:\end{center}
+    \[s^2=\frac{1}{n}\sum_{i=1}^{k}(\dot{x_i} - \bar{x})^3 \cdot n_i\]
+\end{multicols}
+
+Gdy \(A = 0\) to rozkład jest symetryczny, gdy \(A > 0\) to rozkład jest prawostronnie skośny, a gdy \(A < 0\) to rozkład jest lewostronnie skośny.
+\end{document}

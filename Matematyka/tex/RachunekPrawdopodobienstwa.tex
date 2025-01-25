@@ -430,6 +430,7 @@ Rozkład dwumianowy to n-krotne niezależne powtórzenie próby Bernoulliego.
 
 \[EN = \lambda \qquad VarN = \lambda\]
 
+\newpage
 \subsubsection{Wybrane rozkłady ciągłe}
 \subsubsection*{Rozkład jednostajny}
 Rozkład jednostajny na przedziale \([a, b]\):
@@ -535,7 +536,6 @@ Rozkład jednostajny na przedziale \([a, b]\):
     \]
 \end{multicols}
 
-\newpage
 \subsubsection{Rozkład wykładniczy}
 \[T \sim Exp(\lambda), \quad \lambda > 0\]
 \begin{multicols}{2}
@@ -624,12 +624,13 @@ Rozkład jednostajny na przedziale \([a, b]\):
     \]
 \end{multicols}
 \subsubsection*{Własność braku pamięci rozkładu wykładniczego}
-    Jeżeli \(T\) ma rozkład wykładniczy, \(T \sim Exp(\lambda), \lambda > 0\) to dla dowolnych \(s, t > 0\)
-    \[P(T > s+t | T > s) = P(T > t)\]
+Jeżeli \(T\) ma rozkład wykładniczy, \(T \sim Exp(\lambda), \lambda > 0\) to dla dowolnych \(s, t > 0\)
+\[P(T > s+t | T > s) = P(T > t)\]
 
+\newpage
 \subsubsection{Rozkład normalny}
-\[X \sim \mathcal{N} (m, \sigma), \quad m \in \R, \sigma > 0\]
 \begin{multicols}{2}
+    [\[X \sim \mathcal{N} (m, \sigma), \quad m \in \R, \sigma > 0\]]
     \begin{center}
         Gęstość
     \end{center}
@@ -644,40 +645,39 @@ Rozkład jednostajny na przedziale \([a, b]\):
 \begin{center}
     \begin{tikzpicture}
         \begin{axis}[
-            axis lines = middle,
-            ylabel = {\(f(x)\)},
-            ymin=-0.4, ymax=0.5,
-            xmin=-1, xmax=10,
-            xtick={1, 2, 3, 4, 5, 6, 7},
-            xticklabels={\(m-3\sigma\), ,\(m-\sigma\), \(m\), \(m+\sigma\), ,\(m+3\sigma\)},
-            ytick={0},
-            yticklabels={},
-            samples=100,
-            domain=-1:8,
-            width=0.9\linewidth,
-            height=7cm
-        ]
-        \addplot [
-            domain=-1:10,
-            samples=100,
-            line width=0.6pt
-        ]
-        {1/(sqrt(2*pi)*1)*exp(-((x-4)^2)/(2*1^2))};
-        \addplot[dashed] coordinates {(4,0) (4,0.5)};
-        \addplot[dashed] coordinates {(3,-0.1) (3,0.24)};
-        \addplot[dashed] coordinates {(5,-0.1) (5,0.24)};
-        \addplot[dashed] coordinates {(3,0.24) (5,0.24)};
-        \draw[<->] (axis cs:3, -0.1) -- (axis cs:5, -0.1) node[midway, below] {$0{,}683$};
-        \addplot[dashed] coordinates {(2,0) (2,-0.2)};
-        \addplot[dashed] coordinates {(6,0) (6,-0.2)};
-        \draw[<->] (axis cs:2, -0.2) -- (axis cs:6, -0.2) node[midway, below] {$0{,}955$};
-        \addplot[dashed] coordinates {(1,0) (1,-0.3)};
-        \addplot[dashed] coordinates {(7,0) (7,-0.3)};
-        \draw[<->] (axis cs:1, -0.3) -- (axis cs:7, -0.3) node[midway, below] {$0{,}997$};
+                axis lines = middle,
+                ylabel = {\(f(x)\)},
+                ymin=-0.4, ymax=0.5,
+                xmin=-1, xmax=10,
+                xtick={1, 2, 3, 4, 5, 6, 7},
+                xticklabels={\(m-3\sigma\), ,\(m-\sigma\), \(m\), \(m+\sigma\), ,\(m+3\sigma\)},
+                ytick={0},
+                yticklabels={},
+                samples=100,
+                domain=-1:8,
+                width=0.9\linewidth,
+                height=7cm
+            ]
+            \addplot [
+                domain=-1:10,
+                samples=100,
+                line width=0.6pt
+            ]
+            {1/(sqrt(2*pi)*1)*exp(-((x-4)^2)/(2*1^2))};
+            \addplot[dashed] coordinates {(4,0) (4,0.5)};
+            \addplot[dashed] coordinates {(3,-0.1) (3,0.24)};
+            \addplot[dashed] coordinates {(5,-0.1) (5,0.24)};
+            \addplot[dashed] coordinates {(3,0.24) (5,0.24)};
+            \draw[<->] (axis cs:3, -0.1) -- (axis cs:5, -0.1) node[midway, below] {$0{,}683$};
+            \addplot[dashed] coordinates {(2,0) (2,-0.2)};
+            \addplot[dashed] coordinates {(6,0) (6,-0.2)};
+            \draw[<->] (axis cs:2, -0.2) -- (axis cs:6, -0.2) node[midway, below] {$0{,}955$};
+            \addplot[dashed] coordinates {(1,0) (1,-0.3)};
+            \addplot[dashed] coordinates {(7,0) (7,-0.3)};
+            \draw[<->] (axis cs:1, -0.3) -- (axis cs:7, -0.3) node[midway, below] {$0{,}997$};
         \end{axis}
     \end{tikzpicture}
 \end{center}
-
 \[EX = m \qquad VarX=\sigma^2 \qquad \sigma_x=\sigma\]
 
 \subsubsection*{Rozkład normalny standardowy}
@@ -697,38 +697,80 @@ Rozkład jednostajny na przedziale \([a, b]\):
 \begin{center}
     \begin{tikzpicture}
         \begin{axis}[
-            axis lines = middle,
-            ylabel = {\(f(x)\)},
-            ymin=-0.5, ymax=1.2,
-            xmin=-5, xmax=5,
-            xtick={-3, -2, -1, 0, 1, 2, 3},
-            xticklabels={\(-3\), \(-2\), \(-1\), \(0\), \(1\), \(2\), \(3\)},
-            ytick={1},
-            yticklabels={\(1\)},
-            samples=100,
-            domain=-5:5,
-            width=0.9\linewidth,
-            height=8.5cm
-        ]
-        \addplot [
-            domain=-5:5,
-            samples=100,
-            line width=0.6pt
-        ]
-        {1/(sqrt(2*pi)*1)*exp(-((x-0)^2)/(2*1^2))};
-        \addplot[dashed] coordinates {(-1,-0.12) (-1,0.24)};
-        \addplot[dashed] coordinates {(1,-0.12) (1,0.24)};
-        \addplot[dashed] coordinates {(-1,0.24) (1,0.24)};
-        \draw[<->] (axis cs:-1, -0.12) -- (axis cs:1, -0.12) node[midway, below] {$0{,}683$};
-        \addplot[dashed] coordinates {(-2,0) (-2,-0.4)};
-        \addplot[dashed] coordinates {(2,0) (2,-0.24)};
-        \draw[<->] (axis cs:-2, -0.24) -- (axis cs:2, -0.24) node[midway, below] {$0{,}955$};
-        \addplot[dashed] coordinates {(-3,0) (-3,-0.36)};
-        \addplot[dashed] coordinates {(3,0) (3,-0.36)};
-        \draw[<->] (axis cs:-3, -0.36) -- (axis cs:3, -0.36) node[midway, below] {$0{,}997$};
+                axis lines = middle,
+                ylabel = {\(f(x)\)},
+                ymin=-0.5, ymax=1.2,
+                xmin=-5, xmax=5,
+                xtick={-3, -2, -1, 0, 1, 2, 3},
+                xticklabels={\(-3\), \(-2\), \(-1\), \(0\), \(1\), \(2\), \(3\)},
+                ytick={1},
+                yticklabels={\(1\)},
+                samples=100,
+                domain=-5:5,
+                width=0.9\linewidth,
+                height=8.5cm
+            ]
+            \addplot [
+                domain=-5:5,
+                samples=100,
+                line width=0.6pt
+            ]
+            {1/(sqrt(2*pi)*1)*exp(-((x-0)^2)/(2*1^2))};
+            \addplot[dashed] coordinates {(-1,-0.12) (-1,0.24)};
+            \addplot[dashed] coordinates {(1,-0.12) (1,0.24)};
+            \addplot[dashed] coordinates {(-1,0.24) (1,0.24)};
+            \draw[<->] (axis cs:-1, -0.12) -- (axis cs:1, -0.12) node[midway, below] {$0{,}683$};
+            \addplot[dashed] coordinates {(-2,0) (-2,-0.4)};
+            \addplot[dashed] coordinates {(2,0) (2,-0.24)};
+            \draw[<->] (axis cs:-2, -0.24) -- (axis cs:2, -0.24) node[midway, below] {$0{,}955$};
+            \addplot[dashed] coordinates {(-3,0) (-3,-0.36)};
+            \addplot[dashed] coordinates {(3,0) (3,-0.36)};
+            \draw[<->] (axis cs:-3, -0.36) -- (axis cs:3, -0.36) node[midway, below] {$0{,}997$};
         \end{axis}
     \end{tikzpicture}
 \end{center}
 
 \[EX = 0 \qquad VarX=1 \qquad \sigma_x=1\]
+
+\newpage
+\subsection{Zmienne losowe dwuwymiarowe}
+\[X,Y : \Omega \rightarrow \R \qquad Z = (X,Y) \text{ - wektor losowy}\]
+
+\subsubsection{Tw. Nierówność Schwarza}
+Jeżeli \(EX^2 < \infty\) i \(EY^2 < \infty\), to
+\[|E(XY)| \leq \sqrt{EX^2 \cdot EY^2}\]
+
+\subsubsection{Kowariancja}
+Jeżeli \(EX^2 < \infty\) i \(EY^2 < \infty\), to kowariancja zmiennych losowych \(X\) i \(Y\) to liczba \(Cov(X,Y)\) określona wzorem:
+\[Cov(X,Y) = E((X-EX)(Y-EY))\]
+
+Tw. \(Cov(X,Y) = E(XY) - EX \cdot EY\)
+
+Tw. \(|Cov(X,Y)| \leq \sigma_x \cdot \sigma_y\)
+
+\subsubsection*{Współczynnik korelacji}
+Jeżeli \(0 < VarX < \infty\) i \(0 < VarY < \infty\) to współczynnik korelacji liniowej zm. l. \(X\) i \(Y\) to liczba \(\varrho(X,Y)\) zadana wzorem:
+\[\varrho(X,Y) = \frac{Cov(X,Y)}{\sigma_x \cdot \sigma_y}\]
+
+\[-1 \leq \varrho(X,Y) \leq 1\]
+\[\varrho(X,Y) \in [-1,1]\]
+
+Załóżmy, że \(0 < VarX < \infty\) i \(0 < VarY < \infty\), wówczas:
+\begin{enumerate}[label=(\roman*)]
+    \item \makebox[2.1cm][l]{\(\varrho(X,Y) = 0\)} \(\iff X\) i \(Y\) są nieskorelowane
+    \item \makebox[2.1cm][l]{\(\varrho(X,Y) > 0\)} \(\iff X\) i \(Y\) są dodatnio skorelowane
+    \item \makebox[2.1cm][l]{\(\varrho(X,Y) < 0\)} \(\iff X\) i \(Y\) są ujemnie skorelowane
+    \item \makebox[2.1cm][l]{\(\varrho(X,Y) = \pm 1\)} \(\iff X\) i \(Y\) są liniowo skorelowane
+\end{enumerate}
+
+Jeżeli \(\varrho(X,Y) = \pm 1\), to istnieją liczby \(a, b \in \R\) takie, że
+\[Y = aX + b \qquad 
+\substack{
+    \text{Jeżeli } \varrho(X,Y) = 1 \text{, to } a > 0\\
+    \text{Jeżeli } \varrho(X,Y) = -1 \text{, to } a < 0
+}\]
+
+\(X\) i \(Y\) są nieskorelowane \(\iff Cov(X,Y) = 0\)
+
+{\huge \bf{Napisać c.d do wykładu 4}}
 \end{document}
