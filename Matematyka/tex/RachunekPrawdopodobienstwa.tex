@@ -767,10 +767,169 @@ Jeżeli \(\varrho(X,Y) = \pm 1\), to istnieją liczby \(a, b \in \R\) takie, że
 \[Y = aX + b \qquad 
 \substack{
     \text{Jeżeli } \varrho(X,Y) = 1 \text{, to } a > 0\\
-    \text{Jeżeli } \varrho(X,Y) = -1 \text{, to } a < 0
+    \text{Jeżeli } \varrho(X,Y) = -1 \text{, to } a < 0 
 }\]
 
 \(X\) i \(Y\) są nieskorelowane \(\iff Cov(X,Y) = 0\)
 
-{\huge \bf{Napisać c.d do wykładu 4}}
+Fakt: \(X\) i \(Y\) są nieskorelowane \(\iff\) \(Cov(X,Y) = 0\)
+
+Tw. Jeżeli \(EX^2 < \infty, \quad i = 1, 2, \ldots, n\), to
+\[Var(\sum^{n} X_i) = \sum^{n} Var(X_i) + 2 \!\!\!\! \sum_{1 \leq i < j \leq n} \!\!\!\! Cov(X_i, X_j)\]
+
+Tw. Jeżeli zmienne losowe \(X_1, X_2, \ldots, X_n\) są parami nieskorelowane, to
+\[Var(\sum^{n} X_i) = \sum^{n} Var(X_i)\]
+
+\subsubsection{Niezależne zmienne losowe}
+Zmienne losowe \(X_1, X_2, \ldots, X_n\) są niezależne jeżeli dla dowolnych zbiorów borelowskich \(B_1, B_2, \ldots, B_n \subset \R\) zdarzenia \({X_1 \in B_1}, {X_2 \in B_2}, \ldots, {X_n \in B_n}\) są niezależne.
+
+Tw. Jeżeli \(X_1, X_2, \ldots, X_n\) są niezależne oraz \(E|X_i|<\infty, i = 1, 2, \ldots, n\), to
+\[E(\prod^n X_i) = \prod^n EX_i\]
+
+Jeżeli \(X\) i \(Y\) są niezależne, to są nieskorelowane.
+
+Tw. Jeżeli \(X_1, X_2, \ldots, X_n\) są niezależne, to
+\[Var(\sum^n X_i) = \sum^n Var(X_i)\]
+
+\subsubsection{Rozkłady niezależnych zmiennych losowych}
+Tw. Jeżeli \(X\) i \(Y\) to niezależnie zmienne losowe o rozkładzie ciągłym z gęstościa \(f(x)\) i \(g(y)\) odpowiednio oraz \(S = X + Y\), to \(S\) ma ma również rozkład ciągły z gęstością \(h(x)\)
+\[h(x) = \int f(t)g(x-t)dt, \quad x \in \R\]
+\[h = f * g \qquad h \text{ -- splot funckji } f \text{ i } g\]
+
+Tw. Jeżeli \(X\) i \(Y\) to niezależne zm. losowe o rozkładzie Poissona, \(X \sim Poiss(\lambda_1)\) i \(X \sim Poiss(\lambda_2)\) oraz \(S = X + Y\), to \(S\) ma również rozkład Poissona \(S \sim Poiss(\lambda)\), gdzie \(\lambda = \lambda_1 + \lambda_2\)
+
+Tw. Jeżeli \(X\) i \(Y\) to niezależne zm. losowe o rozkładzie normalnym, \(X \sim \mathcal{N} (m_1, \sigma_1)\) i \(Y \sim \mathcal{N} (m_2, \sigma_2)\) oraz \(S = X + Y\), to \(S\) ma rozkład normalny \(S \sim \mathcal{N} (m, \sigma)\), gdzie \(m = m_1 + m_2\) i \(\sigma^2 = \sigma_1^2 + \sigma_2^2\)
+
+Tw. Jeżeli \(X_1, X_2, \ldots, X_n\) to niezależne zmienne losowe o tym samym rozkładzie normalnym \(X_i \sim \mathcal{N} (m, \sigma)\) oraz
+\begin{align*}
+    S_n = \sum^n X_i \qquad& \text{ i }\qquad T_n = \frac{\displaystyle\sum^n X_i}{n}\\
+    \text{to } S_n \sim \mathcal{N}(m_s, \sigma_s) \qquad& \text{ i } \qquad T_N \sim \mathcal{N} (m_t, \sigma_t) \text{, gdzie}\\
+    m_s = m \cdot n, \sigma_s = \sigma\sqrt{n} \qquad& \text{ i } \qquad m_t=m, \sigma_t=\frac{\sigma}{\sqrt{n}}
+\end{align*}
+
+\newpage
+\subsection{Prawa Wielkich Liczb}
+\subsubsection{Prawa Bernoulliego}
+Nieskończony ciąg prób Bernoulliego
+\[X_i = \begin{cases}
+    0,& \text{ w } i\text{-tej próbie porażka}\\
+    1,& \text{ w } i\text{-tej próbie sukces}\\
+\end{cases}\]
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c}
+        \(x_i\) & \(0\) & \(1\) \\\hline
+        \(p_i\) & \(q\) & \(p\) 
+    \end{tabular}
+    \[q = 1 - p\]
+\end{table}
+
+\[EX_i = 0q + 1p = p \qquad EX^2_i = 0^2q + 1^2p = p\]
+\[VarX_i = EX^2_i - (EX_i)^2 = p - p^2 = pq \qquad \sigma_{X_i} = \sqrt{pq}\]
+
+\(X_1, X_2, X_3, \ldots\) -- ciąg niezależnych zm. losowych o tym samym rozkładzie
+
+\(S_n = \sum^n X_i\) -- liczba sukcesów w \(n\) próbach Bernoulliego
+
+\(T_n = \frac{\sum^n X_i}{n}\) -- częstość sukcesów w \(n\) próbach Bernoulliego
+
+Tw. Słabe Prawo Wielkich Liczb Bernoulliego
+
+Dla każdego \(\varepsilon > 0\)
+\[\lim_{n \rightarrow \infty} P(|T_n - p| \leq \varepsilon) = 1\]
+
+Tw. Mocne Prawo Wielkich Liczb Bernoulliego
+\[P(\lim_{n\rightarrow\infty} T_n = p) = 1\]
+
+Tw, Mocne Prawo Wielkich Liczb Kołmogorowa
+
+Załóżmy, że \(X_1, X_2, \ldots\) to ciąg niezależnych zmiennych losowych o tym samym rozkładzie ze skończoną wartością oczekiwaną \(EX_i = m, i=1,2,\ldots\)
+
+Niech \(T_n = \frac{\sum^n X_i}{n}\) wówczas
+\[P(\lim_{n\rightarrow\infty} T_n = m) = 1\]
+
+\newpage
+\subsection{Twierdzenia Graniczne}
+\(X_1, X_2, X_3, \ldots\) -- niezależne zmienne losowe
+
+\(S_n = \sum^n X_i\) -- suma
+
+\(T_n = \frac{\sum^n X_i}{n}\) -- średnia
+
+\(Z_n = \frac{S_n - ES_n}{SD(S_n)}\) -- standaryzowana suma
+
+\[EZ_n = 0 \qquad VarZ_n = 1\]
+
+\subsubsection*{Nieskończony ciąg prób Bernoulliego}
+\[X_i = \begin{cases}
+    0,& \text{ w } i\text{-tej próbie porażka}\\
+    1,& \text{ w } i\text{-tej próbie sukces}\\
+\end{cases} \qquad EX_i = p \quad VarX_i = pq\]
+
+\(X_1, X_2, X_3, \ldots\) -- ciąg niezależnych zm. losowych o tym samym rozkładzie
+
+\(S_n = \sum^n X_i\)
+
+\(ES_n = np\)
+
+\(VarS_n = npq\)
+
+\(SD(S_n) = \sqrt{npq}\)
+
+\(Z_n = \frac{S_n - np}{\sqrt{npq}}\)
+
+Tw. Centralne Twierdzenie Graniczne de Moivre'a-Laplace'a
+
+Jeżeli \(S_n\) to liczba sukcesów w \(n\) próbach Bernoulliego, to dla dowolnych \(a, b \in \R\) takich, że \(a < b\)
+\[\lim_{n\rightarrow\infty} P(a \leq \frac{S_n - np}{\sqrt{npq} \leq b}) = \Phi(b) - \Phi(a)\]
+gdzie \(\Phi\) to dystrybuanta \(\mathcal{N}(0,1)\).
+
+Niech \(S_n\) to liczba sukcesów w \(n\) próbach Bernoulliego i \(T_n = \frac{S_n}{n}\) to częstość sukcesów w \(n\) próbach Bernoulliego, wówczas dla dużych \(n\) mamy:
+\[Z_n \approx \mathcal{N}(0,1) \qquad S_n \approx \mathcal{N}(np, \sqrt{npq}) \qquad T_n \approx \mathcal{N}(p, \sqrt{\frac{pq}{n}})\]
+
+Tw. Centralne Twierdzenie Graniczne Lindeberga-Levy'ego
+
+Załóżmy, że \(X_1, X_2, X_3, \ldots\) to ciąg niezależnych zmiennych losowych o tym samym rozkładzie ze skończoną wariancją, \(EX_i = m, VarX_i=\sigma^2, i=1,2,\ldots\)
+
+Niech \(S_n = \sum^n X_i\) i \(Z_n = \frac{S_n - ES_n}{SD(S_n)} = \frac{S_n - n \cdot m}{\sigma\sqrt{n}}\) oraz niech \(F_n(x)\) będzie dystrybuantą \(Z_n\). Wówczas dla każdego \(x \in \R\)
+\[\lim_{n\rightarrow\infty}F_n(x) = \Phi(x)\]
+\[\text{Wniosek: }\quad S_n \approx \mathcal{N}(m\cdot n, \sigma\sqrt{n}) \quad\text{ i }\quad T_n \approx \mathcal{N}(m, \frac{\sigma}{\sqrt{n}})\]
+
+\subsubsection*{Sondaże (wielkość próby \(n\))}
+Sondaż przeprowadzamy na grupie \(n\) osób. Jedno pytanie.
+
+\(p\) -- procent osób w całej populacji, która odpowiada TAK.
+
+\begin{multicols}{2}
+    \[X_i \begin{cases}
+        1, & i\text{-ty badany TAK}\\
+        0, & i\text{-ty badany NIE lub NIE WIEM}
+    \end{cases}\]
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{c|c|c}
+            \(x_i\) & \(0\) & \(1\) \\\hline
+            \(p_i\) & \(q\) & \(p\)
+        \end{tabular}
+    \end{table}
+\end{multicols}
+
+\(X_1, X_2, \ldots, X_n\) -- niezależne zm. losowe o tym samym rozkładzie
+
+\(T_n = \frac{\sum^{n}X_i}{n}\) -- częstość odpowiedzi TAK w badaniu
+
+Z CTG de Moivre'a-Laplace'a wynika, że
+\[T_n \approx \mathcal{N}(p, \sqrt{\frac{pq}{n}})\]
+
+Parametry badania:
+\begin{itemize}
+    \item \(n\) -- wielkość próby
+    \item \(\varepsilon\) -- dopuszczalny błąd badania
+    \item \(u\) -- poziom ufności
+\end{itemize}
+
+\[P(|T_n - p| \leq \varepsilon) \geq u\]
+\[n \geq \frac{\alpha^2}{4\varepsilon^2} \qquad \text{gdzie } \Phi(\alpha) = \frac{1+u}{2}\]
 \end{document}

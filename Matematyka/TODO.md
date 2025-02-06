@@ -1,0 +1,4 @@
+ - [ ] Ujednolicić formatowanie
+ - [ ] Porawić całkowanie
+ - [ ] Uzupełnić bibliografię
+ - [ ] Testowanie hipotez
