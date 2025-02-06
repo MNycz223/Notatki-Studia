@@ -764,11 +764,11 @@ Załóżmy, że \(0 < VarX < \infty\) i \(0 < VarY < \infty\), wówczas:
 \end{enumerate}
 
 Jeżeli \(\varrho(X,Y) = \pm 1\), to istnieją liczby \(a, b \in \R\) takie, że
-\[Y = aX + b \qquad 
-\substack{
-    \text{Jeżeli } \varrho(X,Y) = 1 \text{, to } a > 0\\
-    \text{Jeżeli } \varrho(X,Y) = -1 \text{, to } a < 0 
-}\]
+\[Y = aX + b \qquad
+    \substack{
+        \text{Jeżeli } \varrho(X,Y) = 1 \text{, to } a > 0\\
+        \text{Jeżeli } \varrho(X,Y) = -1 \text{, to } a < 0
+    }\]
 
 \(X\) i \(Y\) są nieskorelowane \(\iff Cov(X,Y) = 0\)
 
@@ -802,9 +802,9 @@ Tw. Jeżeli \(X\) i \(Y\) to niezależne zm. losowe o rozkładzie normalnym, \(X
 
 Tw. Jeżeli \(X_1, X_2, \ldots, X_n\) to niezależne zmienne losowe o tym samym rozkładzie normalnym \(X_i \sim \mathcal{N} (m, \sigma)\) oraz
 \begin{align*}
-    S_n = \sum^n X_i \qquad& \text{ i }\qquad T_n = \frac{\displaystyle\sum^n X_i}{n}\\
-    \text{to } S_n \sim \mathcal{N}(m_s, \sigma_s) \qquad& \text{ i } \qquad T_N \sim \mathcal{N} (m_t, \sigma_t) \text{, gdzie}\\
-    m_s = m \cdot n, \sigma_s = \sigma\sqrt{n} \qquad& \text{ i } \qquad m_t=m, \sigma_t=\frac{\sigma}{\sqrt{n}}
+    S_n = \sum^n X_i \qquad                               & \text{ i }\qquad T_n = \frac{\displaystyle\sum^n X_i}{n}              \\
+    \text{to } S_n \sim \mathcal{N}(m_s, \sigma_s) \qquad & \text{ i } \qquad T_N \sim \mathcal{N} (m_t, \sigma_t) \text{, gdzie} \\
+    m_s = m \cdot n, \sigma_s = \sigma\sqrt{n} \qquad     & \text{ i } \qquad m_t=m, \sigma_t=\frac{\sigma}{\sqrt{n}}
 \end{align*}
 
 \newpage
@@ -812,15 +812,15 @@ Tw. Jeżeli \(X_1, X_2, \ldots, X_n\) to niezależne zmienne losowe o tym samym 
 \subsubsection{Prawa Bernoulliego}
 Nieskończony ciąg prób Bernoulliego
 \[X_i = \begin{cases}
-    0,& \text{ w } i\text{-tej próbie porażka}\\
-    1,& \text{ w } i\text{-tej próbie sukces}\\
-\end{cases}\]
+        0, & \text{ w } i\text{-tej próbie porażka} \\
+        1, & \text{ w } i\text{-tej próbie sukces}  \\
+    \end{cases}\]
 
 \begin{table}[H]
     \centering
     \begin{tabular}{c|c|c}
         \(x_i\) & \(0\) & \(1\) \\\hline
-        \(p_i\) & \(q\) & \(p\) 
+        \(p_i\) & \(q\) & \(p\)
     \end{tabular}
     \[q = 1 - p\]
 \end{table}
@@ -863,9 +863,9 @@ Niech \(T_n = \frac{\sum^n X_i}{n}\) wówczas
 
 \subsubsection*{Nieskończony ciąg prób Bernoulliego}
 \[X_i = \begin{cases}
-    0,& \text{ w } i\text{-tej próbie porażka}\\
-    1,& \text{ w } i\text{-tej próbie sukces}\\
-\end{cases} \qquad EX_i = p \quad VarX_i = pq\]
+        0, & \text{ w } i\text{-tej próbie porażka} \\
+        1, & \text{ w } i\text{-tej próbie sukces}  \\
+    \end{cases} \qquad EX_i = p \quad VarX_i = pq\]
 
 \(X_1, X_2, X_3, \ldots\) -- ciąg niezależnych zm. losowych o tym samym rozkładzie
 
@@ -903,9 +903,9 @@ Sondaż przeprowadzamy na grupie \(n\) osób. Jedno pytanie.
 
 \begin{multicols}{2}
     \[X_i \begin{cases}
-        1, & i\text{-ty badany TAK}\\
-        0, & i\text{-ty badany NIE lub NIE WIEM}
-    \end{cases}\]
+            1, & i\text{-ty badany TAK}              \\
+            0, & i\text{-ty badany NIE lub NIE WIEM}
+        \end{cases}\]
 
     \begin{table}[H]
         \centering
